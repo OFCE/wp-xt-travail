@@ -3,15 +3,10 @@ title: "Une part des salaires dans la VA élevée en 2025 en France"
 subtitle: "Comparaisons internationales de 30 ans de partage de la valeur ajoutée"
 editor: visual
 abstract: "On explore différentes façons de calculer la part des salaires dans la valeur ajoutée. Le concept privilégié est celui de la part des salaires *corrigés de la non salarisation par le revenu mixte* dans la valeur ajoutée *nette de la consommation de capital fixe* des branches *marchandes hors services immobiliers*. Il fait apparaître une position singulière de la France où la part des salaires est plus élevé et s'est accrue de façon importante. Le calcul de rendement net d'impôts du capital productif confirme ce diagnostic particulièrement préoccupant pour le tissu productif français. Outre les explications habituelles de la hausse de la part des salaries dans la valeur ajoutée, nous ajoutons l'évaporation de la valeur ajoutée par l'optimisation fiscale. L'ensemble des éléments présentés est reproductible à partir des codes fournis sur le dépôt associé."
-citation:
-  type: article-journal
-  container-title: "Document de travail de l'OFCE"
-  issue: 2025-23
-  url: https://xtimbeau.github.io/travail/
 format:
   wp-html: default
   wp-pdf:
-    output-file: "OFCEWP2025-23.pdf"
+    output-file: OFCEWP2025-23.pdf
     tbl-pos: "H"
 authors-title: "Auteur & résumé"
 thanks: "Je remercie Elliot Aurissergues, François Geerolf et Eric Heyer pour leurs relectures pertinentes et stimulantes. Elles m'ont amené à aller plus loin dans les concepts et les données. La discussion lors d'un séminaire à l'OFCE avec, entre autres, Guillaume Allègre, Gérard Cornilleau, Eric Dubois, Hélène Périvier et Mathieu Plane a été très utile. La confusion qui subsiste dans le document est de ma seule responsabilité. "

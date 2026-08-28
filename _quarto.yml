@@ -1,5 +1,5 @@
 project:
-  type: website
+  type: ofce-website
 execute:
   freeze: auto
 website:
@@ -22,13 +22,12 @@ website:
     - text: Post sur le blog de l'OFCE
       icon: pen
       href: https://www.ofce.sciences-po.fr/blog2024/fr/2025/20251128_XT/
-  title: Partage de la valeur ajoutée, comparaisons internationales
   page-navigation: true
   site-url: https://www.ofce.fr/
-  repo-url: https://github.com/xtimbeau/travail/
+  repo-url: https://github.com/OFCE/wp-xt-travail/
   reader-mode: false
   bread-crumbs: true
-  favicon: www/fofce.png
+  favicon: www/fofce-wp.png
   page-footer:
     border: true
     left: '![](/www/ccby4.png){height=''16''}'
@@ -38,19 +37,56 @@ website:
     search: true
     code-tools: true
     bakground: '#FEFEFE'
-    logo: www/ofce_m.png
-    logo-alt: OFCE
+    logo: /www/ofce.png
+    logo-alt: logo de l'OFCE
     logo-href: https://www.ofce.fr/
     left:
-      - text: wp 2025-23
-        icon: house
-        href: index.html
-      - text: Annexes
-        icon: file-bar-graph
-        href: annexes.html
-      - text: Historique
-        icon: newspaper
-        href: NEWS.html
+      - text: L'OFCE
+        menu:
+          - text: À propos
+            href: https://www.ofce.fr/ofce/ofce.html
+          - text: Rapport d'activité
+            href: https://www.ofce.fr/ofce/rapports.html
+          - text: Réseaux de recherche
+            href: https://www.ofce.fr/ofce/reseaux.html
+          - text: Nous rejoindre
+            href: https://www.ofce.fr/ofce/recrute.html
+          - text: Contact
+            href: https://www.ofce.fr/ofce/contact.html
+          - text: Mentions légales
+            href: https://www.ofce.fr/legal/mentions_legales.html
+          - text: Conditions générales
+            href: https://www.ofce.fr/legal/conditions_generales.html
+          - text: Politique des cookies
+            href: https://www.ofce.fr/legal/cookies.html
+      - text: Blog
+        href: https://www.ofce.fr/blog2024/
+      - text: Publications
+        menu:
+          - text: Policy Briefs
+            href: https://www.ofce.fr/publications/policy.html
+          - text: Documents de travail
+            href: https://www.ofce.fr/publications/working_papers.html
+          - text: Etudes & Rapports
+            href: https://www.ofce.fr/publications/rapports.html
+          - text: Revue de l'OFCE
+            href: https://www.ofce.fr/publications/revue.html
+      - text: Prévisions
+        menu:
+          - text: Prévision France & Monde
+            href: https://www.ofce.fr/prev/derniere/
+          - text: Nowcast
+            href: https://www.ofce.fr/nowcast/
+          - text: Anciennes prévisions
+            href: https://www.ofce.fr/indic_prev/prevision.html
+      - text: Outils & Ressources
+        menu:
+          - text: DEBTWATCH
+            href: https://ofce.shinyapps.io/debtwatchr/
+          - text: Modèle ThreeME
+            href: https://www.ofce.fr/recherche/threeme.html
+          - text: Modèle Evamodi
+            href: https://www.ofce.fr/recherche/evamodi.html
     right:
       - text: ' '
         icon: person-circle
@@ -58,7 +94,17 @@ website:
       - text: ' '
         icon: github
         href: https://github.com/xtimbeau/travail
-  site-path: 2026/023/v1
+    tools:
+      - icon: envelope
+        href: '#'
+      - icon: bluesky
+        href: https://bsky.app/profile/ofce.bsky.social
+      - icon: linkedin
+        href: https://www.linkedin.com/company/ofce/posts/
+      - icon: facebook
+        href: https://www.facebook.com/ofcesciencespo/
+  site-path: 2025/23/v1
+  draft-mode: visible
 comments:
   hypothesis: false
 format:
@@ -68,7 +114,7 @@ format:
 language:
   fr:
     other-links-title: Autres contenus
-annee: 2026
+annee: 2025
 bibliography: references.bib
 date: '2025-10-24'
 date-modified: now
@@ -83,7 +129,9 @@ citation:
   type: article-journal
   container-title: Document de travail de l'OFCE
   issue: 2025-23
-  url: https://www.ofce.fr/2026/023/
+  url: https://www.ofce.fr/wp/2025/23/
 version: v1
 wp: 23
 lang: fr
+stage-target: gh-pages
+draft: false
