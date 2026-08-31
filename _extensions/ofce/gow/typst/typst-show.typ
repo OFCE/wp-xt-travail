@@ -25,18 +25,39 @@ $endif$
 $if(lang)$
   language: "$lang$",
 $endif$
-$if(wp)$
-  number: [$wp$],
+$if(nb)$
+  number: [$nb$],
 $endif$
   year: [2024],
+
 $if(mainfont)$
   font: ("$mainfont$",),
 $endif$
+
 $if(fontsize)$
   fontsize: $fontsize$,
 $endif$
-$if(urly)$
-  linky: [$urly$],
+
+$if(urlblog)$
+  linky: [$urlblog$],
 $endif$
+
+$if(scalepic)$
+  scalepic: $scalepic$,
+$endif$
+
+
+$if(extraref)$
+  extrarefs: (
+    $for(extraref)$
+      $if(it.texte)$(
+        texte: [$it.texte$],
+        lien: "$it.lien$",
+      ),
+      $endif$
+    $endfor$
+  ),
+$endif$
+
   doc,
 )
