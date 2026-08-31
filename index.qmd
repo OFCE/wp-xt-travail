@@ -21,7 +21,7 @@ citation:
 format:
   wp-html: default
   wp-pdf:
-    output-file: OFCEWP2026-23.pdf
+    output-file: OFCEWP2025-23.pdf
     tbl-pos: H
 authors-title: Auteur & résumé
 thanks: 'Je remercie Elliot Aurissergues, François Geerolf et Eric Heyer pour leurs
