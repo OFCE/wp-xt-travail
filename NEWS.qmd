@@ -10,6 +10,11 @@ format:
     number-sections: false
 ---
 
+## 28/08/2026
+
+-   📥 Mise à jour des données, T2 2026 détaillés (et équivalent en Europe) intégrés. Les autres pays seront progressivement mis à jour en fonction des disponibilités des données.
+
+
 ## 29/05/2026
 
 -   📥 Mise à jour des données, T1 2026 détaillés (et équivalent en Europe) intégrés. Les autres pays seront progressivement mis à jour en fonction des disponibilités des données.

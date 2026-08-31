@@ -1,0 +1,20 @@
+{
+  "timing": [0.843],
+  "date": ["2026-08-28 11:26:56.161408"],
+  "size": [6680],
+  "args": [],
+  "lapse": ["never"],
+  "src": ["R/earn.r"],
+  "src_hash": ["463540d25505e520e71b39d52666e7f1c235f658"],
+  "arg_hash": ["4262323b"],
+  "track_hash": [0],
+  "track": [],
+  "wd": ["file"],
+  "qmd_file": [],
+  "src_in": ["project"],
+  "data_hash": ["31c612d433c2a3f92bd9225f3d164754"],
+  "priority": [10],
+  "file_size": [1415],
+  "data_date": ["2026-02-09 09:31:23.699394"],
+  "data_file": ["earn-4262323b_31c612d433c2a3f92bd9225f3d164754.qs2"]
+}
