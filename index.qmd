@@ -820,6 +820,8 @@ On peut construire à partir du revenu mixte une correction alternative de la no
 #| label: fig-psalmixte
 #| fig-asp: 0.85
 #| fig-cap: Correction pour la non salarisation, effectifs ou revenu mixte, comptes de branches
+library(ggnewscale)
+library(ggbraid)
 
 psal_fr <- source_data("R/france-melodi.R")$aggr |>
   transmute(time, geo = "FR", champ, psal, psalm)
@@ -851,12 +853,12 @@ data <- naq2 |>
 
 psal <- ggplot(data) +
   aes(x=time, col = geo) +
-  ggbraid::geom_braid(
+  geom_braid(
     data = naq2 |> mutate(s = psalh>psal),
     aes(ymin = psal, ymax = psalh, group = geo, fill = s),
     color = NA, alpha=0.1, show.legend = FALSE) +
   scale_fill_manual(values = c("green", "red")) +
-  ggnewscale::new_scale_fill() +
+  new_scale_fill() +
   scale_alpha_manual(
     values = c(psalh=1, psal = .75),
     labels = labels,

@@ -24,7 +24,7 @@ website:
       href: https://www.ofce.sciences-po.fr/blog2024/fr/2025/20251128_XT/
   page-navigation: true
   site-url: https://www.ofce.fr/
-  repo-url: https://github.com/xtimbeau/travail/
+  repo-url: https://github.com/OFCE/wp-xt-travail/
   reader-mode: false
   bread-crumbs: true
   favicon: www/fofce-wp.png
@@ -132,6 +132,6 @@ citation:
 version: v1
 lang: fr
 stage-target: gh-pages
-draft: true
+draft: false
 wp: 23
 annee: 2025

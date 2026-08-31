@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.6.0",
+    "Version": "4.6.1",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -7325,7 +7325,7 @@
       "NeedsCompilation": "no",
       "Author": "Nikita Tkachenko [aut, cre, cph] (<https://orcid.org/0009-0003-8681-3335>)",
       "Maintainer": "Nikita Tkachenko <nikita@nikitoshina.com>",
-      "Repository": "CRAN"
+      "Repository": "https://packagemanager.posit.co/cran/2026-04-23"
     },
     "stringdist": {
       "Package": "stringdist",
