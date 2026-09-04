@@ -1,0 +1,22 @@
+{
+  "title": "",
+  "authors": [
+    {
+      "name": "Xavier Timbeau",
+      "affiliation": "OFCE, Sciences Po Paris",
+      "orcid": "0000-0002-6198-5953"
+    }
+  ],
+  "abstract": "On explore différentes façons de calculer la part des salaires dans la valeur ajoutée. Le concept privilégié est celui de la part des salaires *corrigés de la non salarisation par le revenu mixte* dans la valeur ajoutée *nette de la consommation de capital fixe* des branches *marchandes hors services immobiliers*. Il fait apparaître une position singulière de la France où la part des salaires est plus élevé et s'est accrue de façon importante. Le calcul de rendement net d'impôts du capital productif confirme ce diagnostic particulièrement préoccupant pour le tissu productif français. Outre les explications habituelles de la hausse de la part des salaries dans la valeur ajoutée, nous ajoutons l'évaporation de la valeur ajoutée par l'optimisation fiscale. L'ensemble des éléments présentés est reproductible à partir des codes fournis sur le dépôt associé.",
+  "wp": 23,
+  "annee": 2025,
+  "version": "v1",
+  "stage": false,
+  "date": "2025-10-24",
+  "date_modified": "2026-09-04",
+  "url": "https://www.ofce.fr/wp/2025/23/v1/",
+  "pdf": "OFCEWP2025-23.pdf",
+  "repo": "https://github.com/OFCE/wp-xt-travail/",
+  "lang": "fr",
+  "source-repo": "OFCE/wp-xt-travail"
+}
