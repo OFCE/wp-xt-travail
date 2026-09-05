@@ -30,7 +30,6 @@ thanks: 'Je remercie Elliot Aurissergues, François Geerolf et Eric Heyer pour l
   entre autres, Guillaume Allègre, Gérard Cornilleau, Eric Dubois, Hélène Périvier
   et Mathieu Plane a été très utile. La confusion qui subsiste dans le document est
   de ma seule responsabilité. '
-
 ---
 
 ```{r, include=FALSE}
