@@ -30,7 +30,11 @@ thanks: 'Je remercie Elliot Aurissergues, François Geerolf et Eric Heyer pour l
   entre autres, Guillaume Allègre, Gérard Cornilleau, Eric Dubois, Hélène Périvier
   et Mathieu Plane a été très utile. La confusion qui subsiste dans le document est
   de ma seule responsabilité. '
-
+format-links:
+  - pdf
+  - format: wp-pdf
+    text: OFCEWP2025-23.pdf
+    icon: file-pdf
 ---
 
 ```{r, include=FALSE}
@@ -269,7 +273,7 @@ L'élasticité estimée généralement, au moins à moyen terme, est sensiblemen
 
 Nous ajoutons un élément d'explication supplémentaire aux variations de la part des salaires dans la valeur ajoutée : l'*évaporation* de la valeur ajoutée par transfert de celle-ci vers un autre pays ou une autre branche, principalement pour des raisons d'optimisation fiscale. Si le ratio salaire sur VA est employé dans la négociation salariale, il est possible que cette évaporation soit organisée pour l'avantage qu'elle procurerait dans la négociation.
 
-La théorie de la régulation [@boyer2023; @boyer2002] propose un angle radicalement différent, mais dans lequel la part des salaires (augmentée de la rémunération des non salariés!) dans la valeur ajoutée joue un rôle central et les modes de négociation salarial et des contractualisations de l'activité productive sont au cœur du régime de production.
+La théorie de la régulation [@boyer2023; @boyer2002] propose un angle radicalement différent, mais dans lequel la part des salaires (augmentée de la rémunération des non salariés!) dans la valeur ajoutée joue un rôle central et les modes de négociation salariale et des contractualisations de l'activité productive sont au cœur du régime de production.
 :::
 
 ```{r, results="asis"}

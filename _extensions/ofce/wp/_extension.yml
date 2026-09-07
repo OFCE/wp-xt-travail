@@ -77,7 +77,7 @@ contributes:
       lightbox: true
       link-external-icon: true
       mainfont: Arimo
-      toc-depth: 2
+      toc-depth: 3
       toc-location: left
       fig-dpi: 1200
       fig-format: svg
@@ -106,9 +106,9 @@ contributes:
         - right = 2.5cm
       linestretch: 1.25
       extra_dependencies: ["float"]
-      fig-dpi: 600
+      fig-dpi: 1200
       fig-width: 5
-      fig-format: svg
+      fig-format: png
       callout-icon: false
       logo2: ../ofce/img/sciencespo.png
       template-partials:
