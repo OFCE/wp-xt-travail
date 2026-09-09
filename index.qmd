@@ -17,10 +17,10 @@ citation:
   type: article-journal
   container-title: Document de travail de l'OFCE
   issue: 2025-23
-  url: https://www.offce.fr/wp/2025/23
+  url: https://www.ofce.fr/wp/2025/23
 format:
   wp-html: default
-  wp-pdf:
+  wp-typst:
     output-file: OFCEWP2025-23.pdf
     tbl-pos: H
 authors-title: Auteur & résumé
