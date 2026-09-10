@@ -95,8 +95,13 @@ lbl <- function(x, format=NULL) {
     mutate(across(1, ~countrycode(.x, fmt, "country.name.fr")))
 }
 
+# vrai si la sortie est typst (quarto ne definit pas knitr::is_typst_output)
+is_typst_output <- function() isTRUE(knitr::pandoc_to("typst"))
+
+# les colonnes de drapeaux et de nanoplots sont des SVG en ligne : elles ne
+# survivent ni en latex ni en typst, on les masque dans les deux cas
 cols_hide_pdf <- function(tbl, col) {
-  if(knitr::is_latex_output())
+  if(knitr::is_latex_output() || is_typst_output())
     return(gt::cols_hide(data = tbl, columns = {{ col }} ))
   return(tbl)
 }
@@ -106,7 +111,9 @@ my_tab_options <- function(data, ...) {
   tab_options(data,
               footnotes.font.size = "90%",
               source_notes.font.size = "95%",
-              quarto.disable_processing= TRUE,
+              # en typst, desactiver le traitement quarto fait passer la table
+              # en html brut, que pandoc supprime : le tableau disparait
+              quarto.disable_processing = !is_typst_output(),
               table.font.size = tableau.font.size,
               table_body.hlines.style = "none",
               column_labels.padding = 3,
