@@ -20,7 +20,7 @@ citation:
   url: https://www.offce.fr/wp/2025/23
 format:
   wp-html: default
-  wp-pdf:
+  wp-typst:
     output-file: OFCEWP2025-23.pdf
     tbl-pos: H
 authors-title: Auteur & résumé
