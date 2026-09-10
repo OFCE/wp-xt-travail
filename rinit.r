@@ -107,8 +107,41 @@ cols_hide_pdf <- function(tbl, col) {
 }
 
 tableau.font.size <- 12
-my_tab_options <- function(data, ...) {
-  tab_options(data,
+
+# gt ne transmet a typst que les largeurs de colonnes exprimees en pourcentage :
+# les px sont perdus dans la conversion html -> pandoc -> typst, toutes les
+# colonnes deviennent "auto" et le tableau est etire sur toute la largeur du
+# texte par la note de bas de tableau (ofce_caption), qui occupe une cellule
+# sur toute la largeur. En typst, la somme des pourcentages des colonnes fait
+# la largeur du tableau : on repartit typst_width entre les colonnes visibles,
+# proportionnellement aux largeurs deja demandees par cols_width() (a parts
+# egales si aucune ne l'est). Sans effet hors typst : en html les px passes a
+# cols_width() fonctionnent deja.
+largeur_typst <- function(data, typst_width) {
+
+  if(is.null(typst_width) || !is_typst_output()) return(data)
+
+  bh <- data[["_boxhead"]]
+  visible <- bh$type %in% c("default", "stub")
+  vars <- bh$var[visible]
+  if(length(vars) == 0) return(data)
+
+  px <- vapply(bh$column_width[visible], function(x) {
+    x <- as.character(unlist(x))
+    if(length(x) == 0) NA_real_ else suppressWarnings(as.numeric(sub("px$", "", x[[1]])))
+  }, numeric(1))
+  if(all(is.na(px))) px <- rep(1, length(px)) else px[is.na(px)] <- mean(px, na.rm = TRUE)
+
+  pct <- round(typst_width * px / sum(px), 2)
+  formules <- lapply(seq_along(vars), function(i)
+    stats::as.formula(sprintf("`%s` ~ gt::pct(%s)", vars[i], pct[i])))
+
+  rlang::inject(gt::cols_width(data, !!!formules))
+}
+
+# typst_width : largeur du tableau en typst, en % de la largeur du texte
+my_tab_options <- function(data, ..., typst_width = NULL) {
+  tbl <- tab_options(data,
               footnotes.font.size = "90%",
               source_notes.font.size = "95%",
               # en typst, desactiver le traitement quarto fait passer la table
@@ -126,6 +159,8 @@ my_tab_options <- function(data, ...) {
               row_group.padding = 3) |>
     opt_footnote_marks("letters") |>
     tab_options(...)
+
+  largeur_typst(tbl, typst_width)
 }
 
 conflicted::conflicts_prefer(dplyr::filter, .quiet = TRUE)

@@ -424,7 +424,7 @@ data4tp |>
     geo ~ px(20),
     geo_lbl ~ px(80),
     everything() ~ px(120)) |>
-  my_tab_options() |>
+  my_tab_options(typst_width = 70) |>
   cols_hide_pdf(geo) |>
   save_gt()
 
