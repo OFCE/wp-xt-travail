@@ -1,3 +1,10 @@
+author:
+  - name: Xavier Timbeau
+    email: xavier.timbeau@sciencespo.fr
+    affiliation: OFCE, Sciences Po Paris
+    affiliation-url: http://www.ofce.fr
+    orcid: 0000-0002-6198-5953
+
 project:
   type: ofce-website
 execute:
@@ -103,35 +110,30 @@ website:
         href: https://www.linkedin.com/company/ofce/posts/
       - icon: facebook
         href: https://www.facebook.com/ofcesciencespo/
-  site-path: 2025/23/v1
+  site-path: 2025/23
   draft-mode: visible
 comments:
   hypothesis: false
 format:
-  ofce-html:
-    link-external-icon: true
-    smooth-scroll: true
+  # ofce-html:
+    # link-external-icon: true
+    # smooth-scroll: true
+  wp-html: default
 language:
   fr:
     other-links-title: Autres contenus
 bibliography: references.bib
 date: '2025-10-24'
 date-modified: now
-author:
-  - name: Xavier Timbeau
-    email: xavier.timbeau@sciencespo.fr
-    affiliation: OFCE, Sciences Po Paris
-    affiliation-url: http://www.ofce.fr
-    orcid: 0000-0002-6198-5953
 ofce_wp: true
 citation:
   type: article-journal
   container-title: Document de travail de l'OFCE
   issue: 2025-23
   url: https://www.ofce.fr/wp/2025/23/
-version: v1
 lang: fr
-stage-target: gh-pages
+stage-target: auto
 draft: false
 wp: 23
 annee: 2025
+stable_url: https://www.ofce.fr/wp/2025/23/

@@ -23,7 +23,6 @@ format:
   wp-typst:
     output-file: OFCEWP2025-23.pdf
     tbl-pos: H
-authors-title: Auteur & résumé
 thanks: 'Je remercie Elliot Aurissergues, François Geerolf et Eric Heyer pour leurs
   relectures pertinentes et stimulantes. Elles m''ont amené à aller plus loin dans
   les concepts et les données. La discussion lors d''un séminaire à l''OFCE avec,
@@ -31,8 +30,8 @@ thanks: 'Je remercie Elliot Aurissergues, François Geerolf et Eric Heyer pour l
   et Mathieu Plane a été très utile. La confusion qui subsiste dans le document est
   de ma seule responsabilité. '
 format-links:
-  - pdf
-  - format: wp-pdf
+  - typst
+  - format: wp-typst
     text: OFCEWP2025-23.pdf
     icon: file-pdf
 ---
