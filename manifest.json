@@ -13,9 +13,10 @@
   "version": null,
   "stage": false,
   "date": "2025-10-24",
-  "date_modified": "2026-09-15",
+  "date_modified": "2026-09-19",
   "url": "https://www.ofce.fr/wp/2025/23/",
   "pdf": "OFCEWP2025-23.pdf",
+  "pdf-path": "wp/2025/23/OFCEWP2025-23.pdf",
   "repo": "https://github.com/OFCE/wp-xt-travail/",
   "lang": "fr",
   "source-repo": "OFCE/wp-xt-travail"
