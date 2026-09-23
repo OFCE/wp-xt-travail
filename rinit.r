@@ -107,8 +107,19 @@ cols_hide_pdf <- function(tbl, col) {
 }
 
 tableau.font.size <- if(knitr::is_latex_output() || is_typst_output()) 12 else 12
+
+# gt emet par defaut la pile de polices CSS de gt::default_fonts(), qui contient
+# les familles generiques "system-ui" et "sans-serif". Typst ne connait pas ces
+# familles et avertit a chaque tableau ("unknown font family: sans-serif") : en
+# sortie typst on impose donc des polices reelles, a commencer par celle du
+# document (mainfont: Arimo dans le format wp-typst).
+tableau.font.names <- if(is_typst_output())
+  c("Arimo", "Helvetica", "Arial") else
+    gt::default_fonts()
+
 my_tab_options <- function(data, ...) {
   tab_options(data,
+              table.font.names = tableau.font.names,
               footnotes.font.size = "90%",
               source_notes.font.size = "95%",
               # en typst, desactiver le traitement quarto fait passer la table

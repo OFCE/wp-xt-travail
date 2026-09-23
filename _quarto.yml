@@ -118,7 +118,7 @@ language:
 bibliography: references.bib
 date: '2025-10-24'
 date-modified: now
-author: Auteur & résumé
+author: Xavier Timbeau
 ofce_wp: true
 citation:
   type: article-journal
