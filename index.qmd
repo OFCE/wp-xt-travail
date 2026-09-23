@@ -31,8 +31,8 @@ thanks: 'Je remercie Elliot Aurissergues, François Geerolf et Eric Heyer pour l
   et Mathieu Plane a été très utile. La confusion qui subsiste dans le document est
   de ma seule responsabilité. '
 format-links:
-  - pdf
-  - format: wp-pdf
+  - typst
+  - format: wp-typst
     text: OFCEWP2025-23.pdf
     icon: file-pdf
 ---
@@ -214,10 +214,10 @@ naq |>
   source = "Eurostat, comptes nationaux annuels (nama_10_a64, nama_10_a64_e), INSEE comptes de branches (DD_CNA_BRANCHES).") |>
   cols_width(
     geo ~ px(20),
-    geo_lbl ~ px(80),
     everything() ~ px(120)) |>
-  my_tab_options() |>
-  cols_hide_pdf(geo) |>
+  my_tab_options(
+    table.width = px(500)  ) |>
+  ofce::ofce_hide_col_pdf(geo) |>
   save_gt()
 
 ```

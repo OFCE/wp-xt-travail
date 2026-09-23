@@ -1,6 +1,6 @@
-title: Format OFCE
+title: Format Policy Brief OFCE
 author: Anissa Saumtally et Xavier Timbeau
-version: 0.6.0
+version: 0.1.0
 quarto-required: ">=1.9.38"
 contributes:
   formats:
@@ -16,9 +16,7 @@ contributes:
           title-block-published: "Publié le"
           title-block-modified: "Modifié le"
           toc-title: "Sur cette page"
-          authors-title: "Autrices, auteurs & résumé"
           draft: "Préliminaire"
-          callout-tip-title: "Encadré"
         en:
           section-title-references: "Bibilography"
           title-block-author-single: "Author"
@@ -27,7 +25,6 @@ contributes:
           title-block-modified: "Modified on"
           callout-tip-title: "Box"
           toc-title: "On this page"
-          authors-title: "Authors & summary"
           draft: "Preliminary"
       fig-asp: 0.61
       cap-location: top
@@ -55,54 +52,82 @@ contributes:
         - nbsp
         - quarto
         - wordcount
+      quot-lang: fr
       shortcodes:
         - fontawesome
-      csl: csl/revue-francaise-de-gestion.csl
+      csl: ../ofce/csl/revue-francaise-de-gestion.csl
+      google-scholar: true
+      appendix-style: default
+      appendix-cite-as: [display, bibtex]
       license: CC BY
 
     html:
       theme:
         - bootstrap
-        - sass/default.scss
-        - sass/rules.scss
-        - ofce.scss
-        - newfont.scss
+        - ../ofce/sass/default.scss
+        - ../ofce/sass/rules.scss
+        - ../ofce/ofce.scss
+        - pb.scss
       include-in-header:
-        - html/url-nav-active.html
-        - html/encadre.js
-      lightbox: true
-      link-external-icon: true
-      mainfont: Open Sans
-      toc-location: left
-      toc-depth: 3
+        - ../ofce/html/url-nav-active.html
+        - ../ofce/html/encadre.js
+      number-sections: true
       number-depth: 3
       html-math-method: katex
+      lightbox: true
+      link-external-icon: true
+      mainfont: Arimo
+      toc-depth: 3
+      toc-location: left
       fig-dpi: 1200
       fig-format: svg
       reference-location: margin
       fig-width: 6
       callout-icon: false
+      logo: ../ofce/img/logo.png
       title-block-style: default
       image-lazy-loading: true
-      number-sections: true
       hide-description: true
       template-partials:
+        - html/title-block.html
         - html/title-metadata.html
+        - html/toc.html
+
     pdf:
-      documentclass: scrartcl
       toc-depth: 1
-      pdffont: Open Sans
+      date-format: "D MMMM YYYY"
+      mainfont: Open Sans
       number-sections: true
       number-depth: 3
-      classoption:
-        - DIV=11
-      papersize: a4
-      fontsize: 9pt
+      geometry:
+        - top = 3cm
+        - bottom = 2.5cm
+        - left = 2.5cm
+        - right = 2.5cm
+      linestretch: 1.25
       extra_dependencies: ["float"]
       fig-dpi: 1200
       fig-width: 5
-      fig-format: svg
+      fig-format: png
+      callout-icon: false
       logo2: ../ofce/img/sciencespo.png
       template-partials:
+        - pdf/before-title.tex
         - pdf/title.tex
         - pdf/before-body.tex
+        - pdf/after-body.tex
+        - pdf/toc.tex
+        - pdf/biblio.tex
+
+    typst:
+      mainfont: Arimo
+      keep-typ: true
+      toc: false
+      callout-icon: false
+      section-numbering: 1.1.a
+      citeproc: true
+      papersize: a4
+      logo: false
+      template-partials:
+        - typst/typst-template.typ
+        - typst/typst-show.typ

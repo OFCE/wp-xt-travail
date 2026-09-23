@@ -106,7 +106,7 @@ cols_hide_pdf <- function(tbl, col) {
   return(tbl)
 }
 
-tableau.font.size <- 12
+tableau.font.size <- if(knitr::is_latex_output() || is_typst_output()) 12 else 12
 my_tab_options <- function(data, ...) {
   tab_options(data,
               footnotes.font.size = "90%",

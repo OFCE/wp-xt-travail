@@ -108,21 +108,17 @@ website:
 comments:
   hypothesis: false
 format:
-  ofce-html:
-    link-external-icon: true
-    smooth-scroll: true
+  # ofce-html:
+    # link-external-icon: true
+    # smooth-scroll: true
+  wp-html: default
 language:
   fr:
     other-links-title: Autres contenus
 bibliography: references.bib
 date: '2025-10-24'
 date-modified: now
-author:
-  - name: Xavier Timbeau
-    email: xavier.timbeau@sciencespo.fr
-    affiliation: OFCE, Sciences Po Paris
-    affiliation-url: http://www.ofce.fr
-    orcid: 0000-0002-6198-5953
+author: Auteur & résumé
 ofce_wp: true
 citation:
   type: article-journal
@@ -135,3 +131,4 @@ stage-target: gh-pages
 draft: false
 wp: 23
 annee: 2025
+stable_url: https://www.ofce.fr/wp/2025/23/

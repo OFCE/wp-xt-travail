@@ -5307,11 +5307,11 @@
       "RemoteUsername": "ofce",
       "RemoteRepo": "ofce",
       "RemoteRef": "master",
-      "RemoteSha": "e1f77df9af54ea6b1314ce7879112fbd4df115c9"
+      "RemoteSha": "d725a5b84bb8276bded890e75827cfdb86578261"
     },
     "ofceweb": {
       "Package": "ofceweb",
-      "Version": "0.10.10",
+      "Version": "1.0.1",
       "Source": "GitHub",
       "Type": "Package",
       "Title": "Tous les outils pour le fonctionnement du web OFCE",
@@ -5332,7 +5332,7 @@
         "future",
         "future.mirai",
         "futurize",
-        "gert (>= 2.4.1)",
+        "gert",
         "gh",
         "gitcreds",
         "glue",
@@ -5358,6 +5358,7 @@
         "askpass",
         "knitr",
         "rmarkdown",
+        "rstudioapi",
         "testthat (>= 3.0.0)",
         "withr"
       ],
@@ -5373,7 +5374,7 @@
       "RemoteUsername": "ofceweb",
       "RemoteRepo": "ofceweb",
       "RemoteRef": "main",
-      "RemoteSha": "981c81a5ec8df2cce06e149df535f058e086757b"
+      "RemoteSha": "656f09217c8a0b62bb316e31e076520bf0eb36f7"
     },
     "officer": {
       "Package": "officer",
