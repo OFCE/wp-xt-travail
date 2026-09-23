@@ -92,11 +92,12 @@ contributes:
         - html/title-block.html
         - html/title-metadata.html
         - html/toc.html
+      html-table-processing: none
 
     pdf:
       toc-depth: 1
       date-format: "D MMMM YYYY"
-      mainfont: Open Sans
+      mainfont: Arimo
       number-sections: true
       number-depth: 3
       geometry:
@@ -121,7 +122,7 @@ contributes:
 
     typst:
       mainfont: Arimo
-      keep-typ: true
+      keep-typ: false
       toc: false
       callout-icon: false
       section-numbering: 1.1.a
