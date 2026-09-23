@@ -99,7 +99,9 @@ doms$snq_b1g |>
       geo_lbl ~ px(90),
       everything() ~ px(65)) |> 
   tab_source_note(md(glue("*Note* : données téléchargées sur le site d'Eurostat (package eurostat v4.0.0) le {date}, telles que publiées par Eurostat. Les instituts nationaux peuvent mettre à disposition plus de données non (encore ?) prises en compte par Eurostat. Le niveau 1 compte 21 branches dont 19 marchandes. Le niveau 2 compte jusqu'à 99 branches, 47 sont utilisées pour les comptes de stock de capital productif."))) |> 
-  my_tab_options()
+  my_tab_options(
+    typst_width = 70
+  )
 ```
 
 Premiers et derniers points connus par pays et par variables

@@ -118,7 +118,13 @@ language:
 bibliography: references.bib
 date: '2025-10-24'
 date-modified: now
-author: Auteur & résumé
+author:
+  - name: Xavier Timbeau
+    email: xavier.timbeau@sciencespo.fr
+    affiliation: OFCE, Sciences Po Paris
+    affiliation-url: http://www.ofce.fr
+    orcid: 0000-0002-6198-5953
+
 ofce_wp: true
 citation:
   type: article-journal

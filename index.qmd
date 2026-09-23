@@ -215,7 +215,8 @@ naq |>
     geo ~ px(20),
     everything() ~ px(120)) |>
   my_tab_options(
-    table.width = px(500)  ) |>
+    table.width = px(500),
+    typst_width = 80) |>
   ofce::ofce_hide_col_pdf(geo) |>
   save_gt()
 
@@ -251,9 +252,10 @@ naq |>
     source = "Eurostat, comptes nationaux annuels (nama_10_a64, nama_10_a64_e).") |>
   cols_width(
     geo ~ px(20),
-    geo_lbl ~ px(80),
+    geo_lbl ~ px(120),
     c(tb,md,mdhi) ~ px(140)) |>
-  my_tab_options() |>
+  my_tab_options(
+    typst_width = 80  ) |>
   cols_hide_pdf(geo) |>
   save_gt()
 
@@ -421,8 +423,8 @@ data4tp |>
   source = "Eurostat, comptes nationaux annuels (nama_10_a64, nama_10_a64_e); actifs productifs (nama_10_nfa_st); INSEE comptes de branches (DD_CNA_BRANCHES).") |>
   cols_width(
     geo ~ px(20),
-    geo_lbl ~ px(80),
-    everything() ~ px(120)) |>
+    geo_lbl ~ px(120),
+    everything() ~ px(80)) |>
   my_tab_options(typst_width = 70) |>
   cols_hide_pdf(geo) |>
   save_gt()
@@ -829,7 +831,9 @@ nsal |>
     champ = "Branches marchandes et non marchandes, année 2024 pour (a) et (b).",
     source = "Eurostat, comptes annuels de branche (nama_10_a64), et de transactions non financières (nasa_10_nf_tr).") |>
   cols_hide_pdf(c("nanoplots", "geo")) |>
-  my_tab_options() |>
+  my_tab_options(
+    typst_width = 70
+  ) |>
   ofce::save_gt()
 
 ```
@@ -1742,7 +1746,8 @@ data |>
   #   subtitle = "Part dans la VAB marchande en 2024 des") |>
   tab_source_note(md("*Source* : Eurostat Household final consumption expenditure by purpose (nama_10_cp18)")) |>
   cols_hide_pdf("geo") |>
-  my_tab_options()
+  my_tab_options(
+    typst_width = 70  )
 ```
 
 Le @fig-ciLfr, pour la France uniquement, caractérise l'évolution de la consommation en services immobiliers par le secteur productif hors services aux ménages. La hausse est continue depuis le début de la période d'observation (qui débute en 1978 sur le @fig-ciLfr), et s'achève en 2006. Cette hausse de la part des consommations intermédiaires ne peut donc pas expliquer à elle seule les évolutions du rendement apparent du capital productif.

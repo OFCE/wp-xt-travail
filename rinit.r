@@ -106,26 +106,61 @@ cols_hide_pdf <- function(tbl, col) {
   return(tbl)
 }
 
-tableau.font.size <- if(knitr::is_latex_output() || is_typst_output()) 12 else 12
-my_tab_options <- function(data, ...) {
-  tab_options(data,
-              footnotes.font.size = "90%",
-              source_notes.font.size = "95%",
-              # en typst, desactiver le traitement quarto fait passer la table
-              # en html brut, que pandoc supprime : le tableau disparait
-              quarto.disable_processing = !is_typst_output(),
-              table.font.size = tableau.font.size,
-              table_body.hlines.style = "none",
-              column_labels.padding = 3,
-              data_row.padding = 3,
-              footnotes.multiline = FALSE,
-              footnotes.padding = 5,
-              source_notes.padding =  2,
-              table.border.bottom.style = "none",
-              table.background.color = "transparent",
-              row_group.padding = 3) |>
+tableau.font.size <- if(knitr::is_latex_output() || is_typst_output()) 9 else 12
+
+# gt ne transmet a typst que les largeurs de colonnes exprimees en pourcentage :
+# les px sont perdus dans la conversion html -> pandoc -> typst, toutes les
+# colonnes deviennent "auto" et le tableau est etire sur toute la largeur du
+# texte par la note de bas de tableau (ofce_caption), qui occupe une cellule
+# sur toute la largeur. En typst, la somme des pourcentages des colonnes fait
+# la largeur du tableau : on repartit typst_width entre les colonnes visibles,
+# proportionnellement aux largeurs deja demandees par cols_width() (a parts
+# egales si aucune ne l'est). Sans effet hors typst : en html les px passes a
+# cols_width() fonctionnent deja.
+largeur_typst <- function(data, typst_width) {
+
+  if(is.null(typst_width) || !is_typst_output()) return(data)
+
+  bh <- data[["_boxhead"]]
+  visible <- bh$type %in% c("default", "stub")
+  vars <- bh$var[visible]
+  if(length(vars) == 0) return(data)
+
+  px <- vapply(bh$column_width[visible], function(x) {
+    x <- as.character(unlist(x))
+    if(length(x) == 0) NA_real_ else suppressWarnings(as.numeric(sub("px$", "", x[[1]])))
+  }, numeric(1))
+  if(all(is.na(px))) px <- rep(1, length(px)) else px[is.na(px)] <- mean(px, na.rm = TRUE)
+
+  pct <- round(typst_width * px / sum(px), 2)
+  formules <- lapply(seq_along(vars), function(i)
+    stats::as.formula(sprintf("`%s` ~ gt::pct(%s)", vars[i], pct[i])))
+
+  rlang::inject(gt::cols_width(data, !!!formules))
+}
+
+# typst_width : largeur du tableau en typst, en % de la largeur du texte
+my_tab_options <- function(data, ..., typst_width = NULL) {
+  tbl <- tab_options(data,
+                     footnotes.font.size = "75%",
+                     source_notes.font.size = "80%",
+                     # en typst, desactiver le traitement quarto fait passer la table
+                     # en html brut, que pandoc supprime : le tableau disparait
+                     quarto.disable_processing = !is_typst_output(),
+                     table.font.size = tableau.font.size,
+                     table_body.hlines.style = "none",
+                     column_labels.padding = 3,
+                     data_row.padding = 3,
+                     footnotes.multiline = FALSE,
+                     footnotes.padding = 5,
+                     source_notes.padding =  2,
+                     table.border.bottom.style = "none",
+                     table.background.color = "transparent",
+                     row_group.padding = 3) |>
     opt_footnote_marks("letters") |>
     tab_options(...)
+
+  largeur_typst(tbl, typst_width)
 }
 
 conflicted::conflicts_prefer(dplyr::filter, .quiet = TRUE)
@@ -149,4 +184,4 @@ ggplot2::set_theme(
 
 if(knitr::is_html_output())
   update_theme(text = element_text(size = 10)) else
-    update_theme(text = element_text(size = 8))
+    update_theme(text = element_text(size = 9))
