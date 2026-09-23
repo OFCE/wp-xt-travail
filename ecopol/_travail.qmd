@@ -9,8 +9,7 @@ author:
 editor: visual
 date: "2025-01-27"
 date-modified: "2025-01-27"
-abstract: "Les profondes mutations du marché du travail ont pesé sur la conditions de travail et les rémunérations. Cependantn comparée à 5 grandes économies européennes, le marché du travail français ne semble pas offrir de grandes marges de manoeuvre pour la revalorisation du travail. Le partage de la valeur ajoutée, ici nette, fait même apparaître une singularité française : la part des salaires dans la valeur ajoutée nette est supérieure à 90% ce qui laisse là aussi peu d'espoir pour une revalorisation globale. Cependfant, ce partge peut ête le résultat d'une 'fuite' de valeur ajoutée soit vers d'autres pays, soit par du transfert vers les services immobiliers. Une harmonisation fiscale européenne et une chasse aux incohérences dans la taxation des entreprises pourrait alors fournir des marges de manoeuvre invisibles sinon.  
-    `r  wordcountaddin::word_count('travail.qmd')` mots."
+abstract: "Les profondes mutations du marché du travail ont pesé sur la conditions de travail et les rémunérations. Cependantn comparée à 5 grandes économies européennes, le marché du travail français ne semble pas offrir de grandes marges de manoeuvre pour la revalorisation du travail. Le partage de la valeur ajoutée, ici nette, fait même apparaître une singularité française : la part des salaires dans la valeur ajoutée nette est supérieure à 90% ce qui laisse là aussi peu d'espoir pour une revalorisation globale. Cependfant, ce partge peut ête le résultat d'une 'fuite' de valeur ajoutée soit vers d'autres pays, soit par du transfert vers les services immobiliers. Une harmonisation fiscale européenne et une chasse aux incohérences dans la taxation des entreprises pourrait alors fournir des marges de manoeuvre invisibles sinon."
 
 bibliography: references.bib
 

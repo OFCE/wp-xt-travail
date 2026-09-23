@@ -23,7 +23,6 @@ format:
   wp-typst:
     output-file: OFCEWP2025-23.pdf
     tbl-pos: H
-authors-title: Auteur & résumé
 thanks: 'Je remercie Elliot Aurissergues, François Geerolf et Eric Heyer pour leurs
   relectures pertinentes et stimulantes. Elles m''ont amené à aller plus loin dans
   les concepts et les données. La discussion lors d''un séminaire à l''OFCE avec,
@@ -424,7 +423,7 @@ data4tp |>
     geo ~ px(20),
     geo_lbl ~ px(80),
     everything() ~ px(120)) |>
-  my_tab_options() |>
+  my_tab_options(typst_width = 70) |>
   cols_hide_pdf(geo) |>
   save_gt()
 
