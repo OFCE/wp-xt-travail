@@ -132,9 +132,10 @@ citation:
   issue: 2025-23
   url: https://www.ofce.fr/wp/2025/23/
 version: v1
-lang: fr
+lang: en
 stage-target: gh-pages
 draft: false
 wp: 23
 annee: 2025
 stable_url: https://www.ofce.fr/wp/2025/23/
+institut: ife

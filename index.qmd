@@ -34,6 +34,8 @@ format-links:
   - format: wp-typst
     text: OFCEWP2025-23.pdf
     icon: file-pdf
+keywords: [partage de la valeur ajoutée, salaires, comparaisons internationales]
+jel: [E25, J30, D33]
 ---
 
 ```{r, include=FALSE}
