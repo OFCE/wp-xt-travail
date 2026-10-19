@@ -106,7 +106,7 @@ cols_hide_pdf <- function(tbl, col) {
   return(tbl)
 }
 
-tableau.font.size <- if(knitr::is_latex_output() || is_typst_output()) 9 else 12
+tableau.font.size <- if(knitr::is_latex_output() || is_typst_output()) 10 else 12
 
 # gt ne transmet a typst que les largeurs de colonnes exprimees en pourcentage :
 # les px sont perdus dans la conversion html -> pandoc -> typst, toutes les

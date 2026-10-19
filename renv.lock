@@ -5082,7 +5082,7 @@
     },
     "ofce": {
       "Package": "ofce",
-      "Version": "1.3.39",
+      "Version": "1.3.40",
       "Source": "GitHub",
       "Type": "Package",
       "Title": "Documents scientifiques aux normes OFCE",
@@ -5131,6 +5131,7 @@
         "munch",
         "magick",
         "sourcoise",
+        "stats",
         "withr"
       ],
       "License": "CC BY 4.0",
@@ -5161,7 +5162,7 @@
       "RemoteUsername": "ofce",
       "RemoteRepo": "ofce",
       "RemoteRef": "master",
-      "RemoteSha": "faa422f8b4d34d56a57fc828cc72cc0651e18eae"
+      "RemoteSha": "c7bb066d430977ddc932cfeb136511d90efd2df2"
     },
     "ofceweb": {
       "Package": "ofceweb",

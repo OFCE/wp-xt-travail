@@ -13,11 +13,6 @@ abstract: On explore différentes façons de calculer la part des salaires dans 
   valeur ajoutée, nous ajoutons l'évaporation de la valeur ajoutée par l'optimisation
   fiscale. L'ensemble des éléments présentés est reproductible à partir des codes
   fournis sur le dépôt associé.
-citation:
-  type: article-journal
-  container-title: Document de travail de l'OFCE
-  issue: 2025-23
-  url: https://www.ofce.fr/wp/2025/23
 format:
   wp-html: default
   wp-typst:
@@ -66,7 +61,7 @@ L'analyse du partage de la valeur ajoutée (@fig-psal) est au cœur des débats 
 
 Le processus de productif engage d'un côté des travailleurs, qu'ils soient salariés ou non, et des apporteurs de capitaux (ou capitalistes), qu'ils soient investisseurs actionnaires, détenteurs de titres de dette ou prêteurs. La nature des contrats reliant chacun de ces intervenants au partage de la richesse produite est très diverse. Certains sont à la fois travailleurs et actionnaires — un entrepreneur cumule les deux rôles, D'autres sont dans des positions radicalement différentes, comme entre un programmeur de l'IA ou un *trader* dont les bonus peuvent être considérables et un agent de maintenance au contrat précaire. Bien que les frontières ne soient pas aussi nettes que ce que l'on peut souhaiter, ce qu'on appelle communément la part des salaires dans la valeur ajoutée est un indicateur central dans la mesure du conflit de répartition entre le travail et le capital, ou plus directement les travailleurs et les capitalistes.
 
-Nous explorons ici la construction de cet indicateur afin qu'il réponde le mieux possible à la question posée, à savoir le confilt de répartition. Cela nous amène à privilégier la part des salaires *augmentés de la rémunération des non salariés par leur revenu mixte* dans la valeur ajoutée *nette de la consommation de capital fixe* en se limitant *aux branches marchandes hors immobilier*.
+Nous explorons ici la construction de cet indicateur afin qu'il réponde le mieux possible à la question posée, à savoir le conflit de répartition. Cela nous amène à privilégier la part des salaires *augmentés de la rémunération des non salariés par leur revenu mixte* dans la valeur ajoutée *nette de la consommation de capital fixe* en se limitant *aux branches marchandes hors immobilier*.
 
 Il apparaît que la part des salaires dans la valeur ajoutée en France est croissante depuis 30 ans (@fig-psal), est la plus haute quand à la compare à 5 grands Etats membre de la zone Euro. Ce résultat contraste avec le consensus qui s'est établit depuis le rapport Cotis [@cotis2009] et confirmé récemment par @cette2019, @pak2019 ou @tresor2025 que la part des salaires en France est constante depuis la fin des années 1980.
 
@@ -779,7 +774,6 @@ Le revenu mixte est le revenu des entrepreneurs individuels, autoentrepreneurs e
 ```{r}
 #| label: tbl-mixte
 #| tbl-cap: "Revenu mixte et masse salariale imputée aux non salariés"
-##| html-table-processing: none
 
 pays <- source_data("R/nace.r")$pays1
 mixte <- source_data("R/mixte.r")$a
@@ -805,7 +799,7 @@ nsal <- source_data("R/vaq.r")$naa |>
          b3g = b3g_2024) |>
   mutate(r = nsal/b3g)
 
-nsal |>
+html_tbl <- nsal |>
   gt() |>
   fmt_flag(geo) |>
   cols_nanoplot(
@@ -823,7 +817,8 @@ nsal |>
              nsal = "(a) Salaires des non sal.",
              b3g = "(b) Revenu mixte",
              r = "(a)/(b)",
-             nanoplots = "de 1995 à 2025") |>
+             nanoplots = "de 1995 à 2025"
+             ) |>
   fmt_number(c(nsal, b3g), decimals = 0, scale_by = 1/1000, dec_mark = ",", sep_mark = " ", pattern = "{x} Mds€") |>
   fmt_percent(c(r), decimals = 0, dec_mark = ",", sep_mark = " ") |>
   cols_width(c(nsal, b3g, r) ~ px(100)) |>
@@ -832,11 +827,36 @@ nsal |>
   ofce_caption(
     champ = "Branches marchandes et non marchandes, année 2024 pour (a) et (b).",
     source = "Eurostat, comptes annuels de branche (nama_10_a64), et de transactions non financières (nasa_10_nf_tr).") |>
-  cols_hide_pdf(c("nanoplots", "geo")) |>
+  ofce::ofce_hide_col_pdf(c("nanoplots", "geo")) |>
+   my_tab_options(
+     typst_width = 70
+   ) |>
+  ofce::save_gt()
+
+typst_tbl <- nsal |>
+  select(-starts_with(as.character(1995:2026)), -geo) |> 
+  gt() |>
+  cols_label(
+    geo_label = "",
+    nsal = "(a) Salaires des non sal.",
+    b3g = "(b) Revenu mixte",
+    r = "(a)/(b)" ) |>
+  fmt_number(c(nsal, b3g), decimals = 0, scale_by = 1/1000, dec_mark = ",", sep_mark = " ", pattern = "{x} Mds€") |>
+  fmt_percent(c(r), decimals = 0, dec_mark = ",", sep_mark = " ") |>
+  cols_width(c(nsal, b3g, r) ~ px(100)) |>
+  cols_align_decimal(c(nsal, b3g, r), dec_mark = ",") |>
+  ofce_caption(
+    champ = "Branches marchandes et non marchandes, année 2024 pour (a) et (b).",
+    source = "Eurostat, comptes annuels de branche (nama_10_a64), et de transactions non financières (nasa_10_nf_tr).") |>
   my_tab_options(
     typst_width = 70
-  ) |>
-  ofce::save_gt()
+  )
+  
+if(is_html_output())
+  html_tbl
+
+if(is_typst_output())
+  typst_tbl
 
 ```
 
@@ -1880,17 +1900,17 @@ girafy(gg)
 
 ## Suppléments {#fappfig-psalcompote .unnumbered}
 
-6 annexes sont accessibles en ligne à l'adresse <https://xtimbeau.github.io/travail/> :
+6 annexes sont accessibles en ligne à l'adresse <https://www.ofce.fr/wp/2025/23/> :
 
-- annexe 1 : [Domaine des données](https://xtimbeau.github.io/travail/annexes.html#a1),
-- annexe 2 : [CCF](https://xtimbeau.github.io/travail/annexes.html#a2),
-- annexe 3 : [Comparaisons entre pays](https://xtimbeau.github.io/travail/annexes.html#a3),
-- annexe 4 : [Rémunération des non salariés](https://xtimbeau.github.io/travail/annexes.html#a4),
-- annexe 5 : [CN2020 et CN2014 pour la France](https://xtimbeau.github.io/travail/annexes.html#a5),
-- annexe 6 : [Rendement du capital productif en France de 1978 à 2024](https://xtimbeau.github.io/travail/annexes.html#a6)
+- annexe 1 : [Domaine des données](https://www.ofce.fr/wp/2025/23/v1/annexes.html#a1),
+- annexe 2 : [CCF](https://www.ofce.fr/wp/2025/23/v1/annexes.html#a2),
+- annexe 3 : [Comparaisons entre pays](https://www.ofce.fr/wp/2025/23/v1/annexes.html#a3),
+- annexe 4 : [Rémunération des non salariés](https://www.ofce.fr/wp/2025/23/v1/annexes.html#a4),
+- annexe 5 : [CN2020 et CN2014 pour la France](https://www.ofce.fr/wp/2025/23/v1/annexes.html#a5),
+- annexe 6 : [Rendement du capital productif en France de 1978 à 2024](https://www.ofce.fr/wp/2025/23/v1/annexes.html#a6)
 
-Un [historique des principales modifications](https://xtimbeau.github.io/travail/NEWS.html) renseigne les différentes versions du document.
+Un [historique des principales modifications](https://www.ofce.fr/wp/2025/23/v1/NEWS.html) renseigne les différentes versions du document.
 
 ## Nombre de mots {.appendix .unnumbered .unlisted}
 
-Il y a {{wordcount}} mots dans ce document (hors code, graphiques, tableaux et bibliographie).
+Il y a {{wordcount}} mots dans ce document (hors résumé, code, graphiques, tableaux et bibliographie).
