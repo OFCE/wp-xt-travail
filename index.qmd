@@ -23,7 +23,7 @@ thanks: 'Je remercie Elliot Aurissergues, François Geerolf et Eric Heyer pour l
   les concepts et les données. La discussion lors d''un séminaire à l''OFCE avec,
   entre autres, Guillaume Allègre, Gérard Cornilleau, Eric Dubois, Hélène Périvier
   et Mathieu Plane a été très utile. La confusion qui subsiste dans le document est
-  de ma seule responsabilité. '
+  de ma seule responsabilité.'
 format-links:
   - typst
   - format: wp-typst
@@ -211,7 +211,7 @@ naq |>
   cols_width(
     geo ~ px(20),
     everything() ~ px(120)) |>
-  my_tab_options(
+  ofce::ofce_tab_options(
     table.width = px(500),
     typst_width = 80) |>
   ofce::ofce_hide_col_pdf(geo) |>
@@ -251,7 +251,7 @@ naq |>
     geo ~ px(20),
     geo_lbl ~ px(120),
     c(tb,md,mdhi) ~ px(140)) |>
-  my_tab_options(
+  ofce::ofce_tab_options(
     typst_width = 80  ) |>
   cols_hide_pdf(geo) |>
   save_gt()
@@ -260,7 +260,7 @@ naq |>
 
 Différents éléments théoriques peuvent être avancés, comme les effets du progrès techniques, la combinaison (substitution) du travail et du capital ou la formation des salaires ou des taux d'intérêt (voir @tip-theorie).
 
-::: {#tip-theorie .callout-tip collapse="true"}
+::: {#tip-theorie .callout-tip}
 ## Les déterminants théoriques de la part des salaires dans la valeur ajoutée
 
 @cette2019 proposent une modélisation simple des principaux déterminants du partage de la valeur ajoutée sur la base d'une fonction de production. @reis2022 étend l'analyse en équilibre néo-keynésien.
@@ -311,10 +311,6 @@ psaleu <- ggplot(data$int |> drop_na(psalh_2025)) +
   theme(
     legend.direction = "horizontal",
     panel.grid.major.y = element_blank(),
-    legend.text = element_marquee(size = rel(0.7)),
-    axis.text.y = element_marquee(size = rel(1),
-                                  vjust = 0.5, hjust = 1,
-                                  margin = margin(r=-5, t=0, b=2)),
     axis.line = element_blank(),
     axis.ticks = element_blank()) +
   ofce_caption(
@@ -352,10 +348,6 @@ psalbeu <- ggplot(data$intb |> drop_na(psalh_2025)) +
   theme(
     legend.direction = "horizontal",
     panel.grid.major.y = element_blank(),
-    legend.text = element_marquee(size = rel(0.7)),
-    axis.text.y = element_marquee(size = rel(1),
-                                  vjust = 0.5, hjust = 1,
-                                  margin = margin(r=-5, t=0, b=2)),
     axis.line = element_blank(),
     axis.ticks = element_blank()) +
   ofce_caption(
@@ -422,7 +414,7 @@ data4tp |>
     geo ~ px(20),
     geo_lbl ~ px(120),
     everything() ~ px(80)) |>
-  my_tab_options(typst_width = 70) |>
+  ofce::ofce_tab_options(typst_width = 70) |>
   cols_hide_pdf(geo) |>
   save_gt()
 
@@ -828,7 +820,7 @@ html_tbl <- nsal |>
     champ = "Branches marchandes et non marchandes, année 2024 pour (a) et (b).",
     source = "Eurostat, comptes annuels de branche (nama_10_a64), et de transactions non financières (nasa_10_nf_tr).") |>
   ofce::ofce_hide_col_pdf(c("nanoplots", "geo")) |>
-   my_tab_options(
+   ofce::ofce_tab_options(
      typst_width = 70
    ) |>
   ofce::save_gt()
@@ -1762,13 +1754,12 @@ data |>
     geo ~ px(30),
     lbl_geo ~ px(120) ,
     everything() ~ px(100)) |>
-  tab_options(table.font.size = 12) |>
   # gt::tab_header(
   #   title = NULL,
   #   subtitle = "Part dans la VAB marchande en 2024 des") |>
   tab_source_note(md("*Source* : Eurostat Household final consumption expenditure by purpose (nama_10_cp18)")) |>
   cols_hide_pdf("geo") |>
-  my_tab_options(
+  ofce::ofce_tab_options(
     typst_width = 70  )
 ```
 
