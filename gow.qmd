@@ -1,0 +1,163 @@
+---
+title: "_gow"
+format: html
+---
+```{r, include = FALSE}
+ofce::init_qmd("rinit_gow.r")
+library(countrycode)
+library(lubridate)
+
+lbl <- function(x, format=NULL) {
+  if(is.null(format))
+    if(is.null(dim(x)))
+      fmt <- ifelse(max(stringr::str_length(x))==2, "eurostat", "iso3c")
+    else
+      fmt <- ifelse(max(stringr::str_length(x[,1]))==2, "eurostat", "iso3c")
+  else
+    fmt <- format
+  if(is.null(dim(x)))
+    return(countrycode(x, fmt, "country.name.fr"))
+  x |>
+    mutate(across(1, ~countrycode(.x, fmt, "country.name.fr")))
+}
+
+
+pays <- c("DE", "FR", "IT", "ES", "NL", "BE", "PT", "IE", "LU")
+salaires <- source_data('R/salaires.r') |>
+  filter(geo %in% pays)
+meta <- sourcoise::sourcoise_meta("R/salaires.r")
+date <- meta$data_date |> ymd_hms()
+date <- stringr::str_glue("{day(date)}/{month(date)}/{year(date)}")
+data <- salaires |>
+  filter(time >= "1995-01-01") |>
+  arrange(time) |> 
+  select(geo, time, w, wb) |>
+  group_by(geo) |> 
+  ungroup() |> 
+  mutate(
+    tooltip = glue(
+    "<b>{lbl(geo)}</b>
+    {date_trim(time)}</b>
+    Salaire réel, toute l'économie {round(w,1)} k€/an"),
+    tooltipb = glue(
+    "<b>{lbl(geo)}</b>
+    {date_trim(time)}</b>
+    Salaire hors cot. soc. employeur réel, toute l'économie {round(wb,1)} k€/an")) |>
+  pivot_longer(starts_with("w")) |>
+  mutate(geo = factor(geo, pays))
+
+lbl_b <- c(w = "Ttes branches", w_md = "Marchand",
+                     w_nmd = "Non marchand", w_hi = "Marchand hors imm.")
+lbl_bb <- c(wb = "Ttes branches", wb_md = "Marchand",
+                     wb_nmd = "Non marchand", wb_hi = "Marchand hors imm.")
+dw <- data |>
+  filter(name == "w") |>
+  drop_na(value)
+
+# Les autres pays, répliqués dans chaque panel (hors le pays du panel)
+autres <- dw |>
+  select(geo_other = geo, time, value) |>
+  cross_join(tibble(geo = factor(pays, pays))) |>
+  filter(geo != geo_other)
+
+# Tendances : 1995T4-2019T4 et 2019T4-dernier point (salaire sur 4 trimestres glissants)
+t_break <- as.Date("2019-10-01")
+trends <- dw |>
+  group_by(geo) |>
+  summarise(
+    t0 = min(time[time >= "1995-10-01"]),
+    t2 = max(time),
+    v0 = value[time == t0],
+    v1 = value[time == t_break],
+    v2 = value[time == t2]) |>
+  mutate(t1 = t_break)
+
+trends <- bind_rows(
+  trends |> transmute(geo, periode = "1", x = t0, xend = t1, y = v0, yend = v1),
+  trends |> transmute(geo, periode = "2", x = t1, xend = t2, y = v1, yend = v2)) |>
+  mutate(
+    T_ans = as.numeric(xend - x) / 365.25,
+    g = (yend / y)^(1 / T_ans) - 1,
+    x_lab = x + (xend - x) / 2,
+    y_lab = y^.6 * yend^.4,
+    label = scales::percent(g, accuracy = 0.1, decimal.mark = ",",
+                            style_positive = "plus", suffix = " %/an"))
+
+# Titre de panel : drapeau + nom du pays, en haut à gauche
+titres <- tibble(geo = factor(pays, pays)) |>
+  mutate(label = str_c(ofce::get_flags(as.character(geo), out = "md", size = 1)," ",
+                       lbl(as.character(geo))))
+```
+
+```{r}
+#| label: fig-salaires
+#| fig-cap: Salaires réels en Europe
+#| fig-asp: 0.85
+
+sal <- ggplot(dw) +
+  aes(x=time, y=value,
+      alpha = name, linewidth = name, linetype = name,
+      color = geo) +
+  scale_alpha_manual(
+    values = c(w=1, w_md = 1, w_nmd = 0.75, w_hi = 0.75),
+    labels = lbl_b, name = NULL) +
+  scale_linetype_manual(
+    values = c(w="solid", w_md ="solid", w_nmd ="solid", w_hi = "11"),
+    labels = lbl_b,
+    name = NULL) +
+  scale_linewidth_manual(
+    values = c(w=.25, w_md = 0.1, w_nmd = 0.25, w_hi= 0.5),
+    labels = lbl_b, name = NULL) +
+  geom_line() +
+  geom_line(
+    data = autres, aes(x = time, y = value, group = geo_other),
+    inherit.aes = FALSE, color = "grey85", linewidth = 0.25) +
+  geom_segment(
+    data = trends,
+    aes(x = x, xend = xend, y = y, yend = yend, color = geo),
+    inherit.aes = FALSE, linewidth = 0.4, linetype = "dashed") +
+  munch::geom_text_md(
+    data = trends |> filter(periode == "1"),
+    aes(x = x_lab, y = y_lab, label = label, color = geo),
+    inherit.aes = FALSE, size = 6, size.unit = "pt", 
+    vjust = 1.8) +
+  munch::geom_text_md(
+    data = trends |> filter(periode == "2"),
+    aes(x = x_lab, y = y_lab, label = label, color = geo),
+    inherit.aes = FALSE, size = 6, size.unit = "pt",
+    vjust = -1, hjust = 0.7) +
+  munch::geom_text_md(
+    data = titres,
+    aes(x = ymd("1995-02-01"), y = Inf, label = label),
+    inherit.aes = FALSE, size = 6, size.unit = "pt",
+    hjust = 0, vjust = 1) +
+  geom_point_interactive(
+    data = ~.x |>
+      filter( name == "w") |>
+      group_by(geo) |>
+      filter(quarter(time) == last(quarter(time))) |>
+      ungroup(),
+    aes(tooltip = tooltip, data_id = time),
+    size = 0.2, stroke = 0, hover_nearest = TRUE) +
+  geom_line() +
+  facet_wrap(vars(geo), ncol = 3, labeller = lbl) +
+  scale_ofce_date(labels = date1) +
+  ylab("Salaire annuel réel en k€") + xlab(NULL) +
+  scale_y_log10(breaks = c(10, 20, 30, 40, 50, 50, 60),
+                limits = c(20, 100)) +
+  scale_color_pays(format = "eurostat") +
+  theme(
+    legend.direction = "horizontal",
+    strip.text = element_blank()) +
+  guides(color = "none", fill="none", alpha = "none", linetype = "none", linewidth = "none") +
+  ofce_caption(
+    wrap = 0,
+    source = "Eurostat, comptes nationaux trimestriels de branche (namq_10_a10), téléchargé le {date}, code à github.com/ofce/wp-xt-travail/R/salaires.r.",
+    champ = "Toute l'économie, salaires y compris cotisations sociales à la charge de l'employeur.",
+    lecture = "Pour chaque pays, le taux de croissance annuel moyen du salaire par tête réel est calculé (de 1995 à 2019 en dessous de la courbe de 2019 à 2026 au dessus de la courbe).",
+    note = "Le salaire est défini comme la masse salariale (D1) divisée par l'emploi salarié, sur les 4 derniers trimestres, déflaté par le déflateur de la consommation (P31_S14) chaîné.",
+    ofce = FALSE)
+
+girafy(sal)
+```
+

@@ -1,0 +1,20 @@
+{
+  "timing": [6.4341],
+  "date": ["2026-11-05 16:20:57.359115"],
+  "size": [164648],
+  "args": [],
+  "lapse": ["never"],
+  "src": ["R/salaires.r"],
+  "src_hash": ["c66a5dc942809603a17d3a6291054584bb1e8e2d"],
+  "arg_hash": ["4262323b"],
+  "track_hash": [0],
+  "track": [],
+  "wd": ["file"],
+  "qmd_file": [],
+  "src_in": ["project"],
+  "data_hash": ["ee76488dff16eecdca7e94eaa97a44ae"],
+  "priority": [10],
+  "file_size": [133742],
+  "data_date": ["2026-11-05 15:45:29.426447"],
+  "data_file": ["salaires-4262323b_ee76488dff16eecdca7e94eaa97a44ae.qs2"]
+}
