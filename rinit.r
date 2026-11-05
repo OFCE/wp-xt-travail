@@ -11,7 +11,7 @@ opts_chunk$set(
   echo = FALSE,
   error = TRUE)
 
-systemfonts::add_fonts(system.file("fonts", "OpenSans", "OpenSans-Regular.ttf", package="ofce"))
+# systemfonts::add_fonts(system.file("fonts", "OpenSans", "OpenSans-Regular.ttf", package="ofce"))
 
 library(tidyverse)
 library(ofce)
@@ -31,7 +31,7 @@ library(ofceweb)
 options(
   ofce.base_size = 12,
   ofce.background_color = "transparent",
-  ofce.marquee = TRUE,
+  ofce.marquee = "munch",
   ofce.caption.ofce = FALSE,
   ofce.caption.wrap = 0,
   ofce.source_data.src_in = "file",
@@ -142,8 +142,8 @@ largeur_typst <- function(data, typst_width) {
 # typst_width : largeur du tableau en typst, en % de la largeur du texte
 my_tab_options <- function(data, ..., typst_width = NULL) {
   tbl <- tab_options(data,
-                     footnotes.font.size = "75%",
-                     source_notes.font.size = "80%",
+                     footnotes.font.size = "80%",
+                     source_notes.font.size = "90%",
                      # en typst, desactiver le traitement quarto fait passer la table
                      # en html brut, que pandoc supprime : le tableau disparait
                      quarto.disable_processing = !is_typst_output(),
@@ -175,7 +175,7 @@ conflicted::conflicts_prefer(lubridate::quarter, .quiet = TRUE)
 
 ggplot2::set_theme(
   theme_ofce(
-    marquee=TRUE,
+    marquee="munch",
     axis.line.y = element_blank(),
     legend.position = "bottom",
     legend.justification = "center",
