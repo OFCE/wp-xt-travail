@@ -1,31 +1,31 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1793896312764,
+    "generatedTime": 1793962864710,
     "data": [
         {
             "type": "file",
             "name": ".adhoc-meta.json",
             "size": 96,
-            "hash": "b73f6dd44ad77cf5213083fea4e6be2b0db17b14d5e0ce7cd5f63dacb023c5fc"
+            "hash": "0522882555556507de038285f626ccaf7f44cb6b067b5ceda91bdbe065e93e34"
         },
         {
             "type": "file",
             "name": ".ftp-deploy-sync-state.json",
-            "size": 0,
-            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            "size": 32592,
+            "hash": "57d9c70b72c9522df25d082b75f66b27d4fb567316ddb1a3a2bcc1e4eba79c11"
         },
         {
             "type": "file",
             "name": ".staticrypt.json",
             "size": 50,
-            "hash": "324353838cd6d22b24356c347d87164b33843f55802d03e642fc7c674430e234"
+            "hash": "3b2074e9042d92d024dfefc29df5ce118fd491ba5c78f56c63b6771c9cdca96d"
         },
         {
             "type": "file",
             "name": "gow.html",
-            "size": 7323085,
-            "hash": "99c9abc1708ea4ce54aa34272e463e258b9cefe4186d712459020103cd386fbd"
+            "size": 11212205,
+            "hash": "80ed0160f9c2f3277d66f9acce468c9bb0c2ab424a6c940be7a78dfa3aaac83f"
         },
         {
             "type": "folder",
@@ -34,8 +34,8 @@
         {
             "type": "file",
             "name": "index.html",
-            "size": 7323085,
-            "hash": "3e2a91dfd3cfc41c9ceff5f86ffb243700a8466a5e455e76e599e42ac81691b6"
+            "size": 11212205,
+            "hash": "ceaf0ae5aab13c6c50bc3381a13a1c5a4098bc0de56726066819f62d47506cf4"
         },
         {
             "type": "folder",
@@ -59,11 +59,11 @@
         },
         {
             "type": "folder",
-            "name": "gow_files/libs/htmlwidgets-1.6.4"
+            "name": "gow_files/libs/htmltools-fill-0.5.9"
         },
         {
             "type": "folder",
-            "name": "gow_files/libs/htmltools-fill-0.5.9"
+            "name": "gow_files/libs/htmlwidgets-1.6.4"
         },
         {
             "type": "folder",
@@ -135,6 +135,12 @@
         },
         {
             "type": "file",
+            "name": "gow_files/libs/htmltools-fill-0.5.9/fill.css",
+            "size": 585,
+            "hash": "0f41825dd6d8bb9923f39a10cd5de929daf009243c64e3e30fc008e45b8c3325"
+        },
+        {
+            "type": "file",
             "name": "gow_files/libs/girafe-binding-0.9.6/girafe.js",
             "size": 120590,
             "hash": "80bd29b405e395147d36e17dc3c3f1781ab9b4ab018adcf4836758a5e9189ddc"
@@ -146,10 +152,8 @@
             "hash": "4578d2a0732228ac3381eb2b3dfd81d30dc1d8000beb96a1b20e4f2088b2b9a4"
         },
         {
-            "type": "file",
-            "name": "gow_files/libs/htmltools-fill-0.5.9/fill.css",
-            "size": 585,
-            "hash": "0f41825dd6d8bb9923f39a10cd5de929daf009243c64e3e30fc008e45b8c3325"
+            "type": "folder",
+            "name": "gow_files/libs/liberation-mono-0.5.3/css"
         },
         {
             "type": "folder",
@@ -157,15 +161,7 @@
         },
         {
             "type": "folder",
-            "name": "gow_files/libs/liberation-mono-0.5.3/css"
-        },
-        {
-            "type": "folder",
             "name": "gow_files/libs/liberation-sans-0.5.3/css"
-        },
-        {
-            "type": "folder",
-            "name": "gow_files/libs/liberation-serif-0.5.3/css"
         },
         {
             "type": "folder",
@@ -174,6 +170,10 @@
         {
             "type": "folder",
             "name": "gow_files/libs/liberation-serif-0.5.3/fonts"
+        },
+        {
+            "type": "folder",
+            "name": "gow_files/libs/liberation-serif-0.5.3/css"
         },
         {
             "type": "file",
@@ -189,15 +189,15 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/ofce-fonts-1.3.47/Arimo-Italic.woff2",
-            "size": 24464,
-            "hash": "09d19009044a036bb8fdd13c5135c0960aadaca9a975adb0bbffca2df413a275"
-        },
-        {
-            "type": "file",
             "name": "gow_files/libs/ofce-fonts-1.3.47/Arimo-Regular.woff2",
             "size": 21572,
             "hash": "7af03c27783697ecf7ea0488d5c4a562826e57d31bf7c1dcfe85de19d980271b"
+        },
+        {
+            "type": "file",
+            "name": "gow_files/libs/ofce-fonts-1.3.47/Arimo-Italic.woff2",
+            "size": 24464,
+            "hash": "09d19009044a036bb8fdd13c5135c0960aadaca9a975adb0bbffca2df413a275"
         },
         {
             "type": "file",
@@ -231,15 +231,15 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css",
-            "size": 3678,
-            "hash": "954f2fe7d16cd08d8950c5b69d9f5df61fd26d11ed45d4573eeb6c7c0800ef13"
-        },
-        {
-            "type": "file",
             "name": "gow_files/libs/quarto-html/quarto.js",
             "size": 28472,
             "hash": "ff69fff180226f37a042e27a4046ca1f6d585b3e454452e27d3549161f7070fd"
+        },
+        {
+            "type": "file",
+            "name": "gow_files/libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css",
+            "size": 3678,
+            "hash": "954f2fe7d16cd08d8950c5b69d9f5df61fd26d11ed45d4573eeb6c7c0800ef13"
         },
         {
             "type": "folder",
@@ -263,9 +263,9 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/liberation-mono-0.5.3/fonts/ChangeLog",
-            "size": 806,
-            "hash": "bbbd383dae5527d944a41db0edbdf470d1539f16e632304a1ddeb572a29d0b4b"
+            "name": "gow_files/libs/liberation-mono-0.5.3/css/liberation-mono.css",
+            "size": 1025,
+            "hash": "b0026635595a89fe5e226c877b00e1c62daf0fff0d5ebc8f2ec46b8abcb67f35"
         },
         {
             "type": "file",
@@ -275,9 +275,9 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/liberation-mono-0.5.3/fonts/LICENSE",
-            "size": 4414,
-            "hash": "93fed46019c38bbe566b479d22148e2e8a1e85ada614accb0211c37b2c61c19b"
+            "name": "gow_files/libs/liberation-mono-0.5.3/fonts/ChangeLog",
+            "size": 806,
+            "hash": "bbbd383dae5527d944a41db0edbdf470d1539f16e632304a1ddeb572a29d0b4b"
         },
         {
             "type": "file",
@@ -287,15 +287,21 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/liberation-mono-0.5.3/fonts/LiberationMono-BoldItalic.ttf",
-            "size": 277912,
-            "hash": "a0d13334ec3450aa57da0f0dcb356dc18775417e3662a23af88c94c4ea557e42"
+            "name": "gow_files/libs/liberation-mono-0.5.3/fonts/LICENSE",
+            "size": 4414,
+            "hash": "93fed46019c38bbe566b479d22148e2e8a1e85ada614accb0211c37b2c61c19b"
         },
         {
             "type": "file",
             "name": "gow_files/libs/liberation-mono-0.5.3/fonts/LiberationMono-Bold.woff",
             "size": 170048,
             "hash": "54c6a5648958043b60bb55621ff52aec57a5f4c541c2aa6abd3f0273d0f88986"
+        },
+        {
+            "type": "file",
+            "name": "gow_files/libs/liberation-mono-0.5.3/fonts/LiberationMono-BoldItalic.ttf",
+            "size": 277912,
+            "hash": "a0d13334ec3450aa57da0f0dcb356dc18775417e3662a23af88c94c4ea557e42"
         },
         {
             "type": "file",
@@ -341,15 +347,15 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/liberation-mono-0.5.3/fonts/LiberationSans-BoldItalic.woff",
-            "size": 194844,
-            "hash": "ce9e471fc25c7af762ff4dc0ee544e0b043dd5aa5684034ec7b5a5b43580e363"
-        },
-        {
-            "type": "file",
             "name": "gow_files/libs/liberation-mono-0.5.3/fonts/LiberationSans-BoldItalic.ttf",
             "size": 349724,
             "hash": "24b7cf0d06040c9a1b16efc528dc2966a407288938dfa169ee7fe584140a3393"
+        },
+        {
+            "type": "file",
+            "name": "gow_files/libs/liberation-mono-0.5.3/fonts/LiberationSans-BoldItalic.woff",
+            "size": 194844,
+            "hash": "ce9e471fc25c7af762ff4dc0ee544e0b043dd5aa5684034ec7b5a5b43580e363"
         },
         {
             "type": "file",
@@ -395,15 +401,15 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/liberation-mono-0.5.3/fonts/LiberationSerif-Italic.ttf",
-            "size": 370968,
-            "hash": "ac0d2e385900315fbe12e0a175b5e22c8e8340f500d8b1e9b0e99c5ac065a1eb"
-        },
-        {
-            "type": "file",
             "name": "gow_files/libs/liberation-mono-0.5.3/fonts/LiberationSerif-BoldItalic.woff",
             "size": 206848,
             "hash": "b7652f02741be9f5d5fbea6b3081b54a07c7c7e87ccaba6fb99a945494bd61c6"
+        },
+        {
+            "type": "file",
+            "name": "gow_files/libs/liberation-mono-0.5.3/fonts/LiberationSerif-Italic.ttf",
+            "size": 370968,
+            "hash": "ac0d2e385900315fbe12e0a175b5e22c8e8340f500d8b1e9b0e99c5ac065a1eb"
         },
         {
             "type": "file",
@@ -437,33 +443,21 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/liberation-mono-0.5.3/css/liberation-mono.css",
-            "size": 1025,
-            "hash": "b0026635595a89fe5e226c877b00e1c62daf0fff0d5ebc8f2ec46b8abcb67f35"
-        },
-        {
-            "type": "file",
             "name": "gow_files/libs/liberation-sans-0.5.3/css/liberation-sans.css",
             "size": 1025,
             "hash": "72a455bc04dd2805e09e6c41807cd750e59f51c83ba12e7684ae45175411e70f"
         },
         {
             "type": "file",
-            "name": "gow_files/libs/liberation-serif-0.5.3/css/liberation-serif.css",
-            "size": 1037,
-            "hash": "73d69e7cb79a1b1d4d9d5f5acdeddf32201a39c0612ed69081ec9b78e4259e19"
+            "name": "gow_files/libs/liberation-sans-0.5.3/fonts/AUTHORS",
+            "size": 242,
+            "hash": "d640bd6acfd5f7558507851f3e8936857b390bbe7e10c662241161dd83dbe830"
         },
         {
             "type": "file",
             "name": "gow_files/libs/liberation-sans-0.5.3/fonts/ChangeLog",
             "size": 806,
             "hash": "bbbd383dae5527d944a41db0edbdf470d1539f16e632304a1ddeb572a29d0b4b"
-        },
-        {
-            "type": "file",
-            "name": "gow_files/libs/liberation-sans-0.5.3/fonts/AUTHORS",
-            "size": 242,
-            "hash": "d640bd6acfd5f7558507851f3e8936857b390bbe7e10c662241161dd83dbe830"
         },
         {
             "type": "file",
@@ -491,12 +485,6 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationMono-BoldItalic.woff",
-            "size": 161932,
-            "hash": "16ff9ebfc12c4c1366fc8bec141ea5000d14e233c5ebf968d773010b574c0c29"
-        },
-        {
-            "type": "file",
             "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationMono-Italic.ttf",
             "size": 274984,
             "hash": "7be4134e2499920a4d7013e0da9ed2d5bdaccf84825791368761c5cbbf5db48c"
@@ -506,6 +494,12 @@
             "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationMono-Italic.woff",
             "size": 159520,
             "hash": "d5849cb19881d841828737a938b094e4d4604510ba8d9f009462c595cd6473b8"
+        },
+        {
+            "type": "file",
+            "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationMono-BoldItalic.woff",
+            "size": 161932,
+            "hash": "16ff9ebfc12c4c1366fc8bec141ea5000d14e233c5ebf968d773010b574c0c29"
         },
         {
             "type": "file",
@@ -521,15 +515,15 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationSans-Bold.woff",
-            "size": 192156,
-            "hash": "5b6291f6cf226c3f1db2fce3008a22ba1ab6886893a9aeb8f1f03005bddee6b9"
-        },
-        {
-            "type": "file",
             "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationSans-Bold.ttf",
             "size": 353936,
             "hash": "d723d5a272970aedf296ef6fc628180df6074bce7769701ea9e0d222c052668c"
+        },
+        {
+            "type": "file",
+            "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationSans-Bold.woff",
+            "size": 192156,
+            "hash": "5b6291f6cf226c3f1db2fce3008a22ba1ab6886893a9aeb8f1f03005bddee6b9"
         },
         {
             "type": "file",
@@ -551,12 +545,6 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationSans-Regular.ttf",
-            "size": 350200,
-            "hash": "e5b0af421ea2bfbc1ac8d251d647268087ae82786234c57f757d1f0b90fa8b49"
-        },
-        {
-            "type": "file",
             "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationSans-Italic.woff",
             "size": 197640,
             "hash": "347ff2dc069a5af3ff61f4cb0456f3fa4b748d24e659712bacbc197a243acf7b"
@@ -569,6 +557,18 @@
         },
         {
             "type": "file",
+            "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationSans-Regular.ttf",
+            "size": 350200,
+            "hash": "e5b0af421ea2bfbc1ac8d251d647268087ae82786234c57f757d1f0b90fa8b49"
+        },
+        {
+            "type": "file",
+            "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationSerif-Bold.ttf",
+            "size": 365112,
+            "hash": "7a68170c1129e294639770c83f79033baaa59e384d561e979bbfc5ce11fc9854"
+        },
+        {
+            "type": "file",
             "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationSerif-Bold.woff",
             "size": 197292,
             "hash": "2e5bad5212547e4d3942280c016699c9b36b22a4c3f3e13d1e045e4c6d81d239"
@@ -578,12 +578,6 @@
             "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationSerif-BoldItalic.ttf",
             "size": 371060,
             "hash": "78c2810297cd3d9adead7a2bc242b67a095576ae020f19373a8825e504f5c52d"
-        },
-        {
-            "type": "file",
-            "name": "gow_files/libs/liberation-sans-0.5.3/fonts/LiberationSerif-Bold.ttf",
-            "size": 365112,
-            "hash": "7a68170c1129e294639770c83f79033baaa59e384d561e979bbfc5ce11fc9854"
         },
         {
             "type": "file",
@@ -659,15 +653,15 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/liberation-serif-0.5.3/fonts/LiberationMono-BoldItalic.ttf",
-            "size": 277912,
-            "hash": "a0d13334ec3450aa57da0f0dcb356dc18775417e3662a23af88c94c4ea557e42"
-        },
-        {
-            "type": "file",
             "name": "gow_files/libs/liberation-serif-0.5.3/fonts/LiberationMono-BoldItalic.woff",
             "size": 161932,
             "hash": "16ff9ebfc12c4c1366fc8bec141ea5000d14e233c5ebf968d773010b574c0c29"
+        },
+        {
+            "type": "file",
+            "name": "gow_files/libs/liberation-serif-0.5.3/fonts/LiberationMono-BoldItalic.ttf",
+            "size": 277912,
+            "hash": "a0d13334ec3450aa57da0f0dcb356dc18775417e3662a23af88c94c4ea557e42"
         },
         {
             "type": "file",
@@ -761,15 +755,15 @@
         },
         {
             "type": "file",
-            "name": "gow_files/libs/liberation-serif-0.5.3/fonts/LiberationSerif-BoldItalic.woff",
-            "size": 206848,
-            "hash": "b7652f02741be9f5d5fbea6b3081b54a07c7c7e87ccaba6fb99a945494bd61c6"
-        },
-        {
-            "type": "file",
             "name": "gow_files/libs/liberation-serif-0.5.3/fonts/LiberationSerif-Italic.ttf",
             "size": 370968,
             "hash": "ac0d2e385900315fbe12e0a175b5e22c8e8340f500d8b1e9b0e99c5ac065a1eb"
+        },
+        {
+            "type": "file",
+            "name": "gow_files/libs/liberation-serif-0.5.3/fonts/LiberationSerif-BoldItalic.woff",
+            "size": 206848,
+            "hash": "b7652f02741be9f5d5fbea6b3081b54a07c7c7e87ccaba6fb99a945494bd61c6"
         },
         {
             "type": "file",
@@ -800,6 +794,12 @@
             "name": "gow_files/libs/liberation-serif-0.5.3/fonts/TODO",
             "size": 350,
             "hash": "cd27fae5e8aa0e65359a4e4e8ca641fd89b7fff35c915f34284fa7df66f786b4"
+        },
+        {
+            "type": "file",
+            "name": "gow_files/libs/liberation-serif-0.5.3/css/liberation-serif.css",
+            "size": 1037,
+            "hash": "73d69e7cb79a1b1d4d9d5f5acdeddf32201a39c0612ed69081ec9b78e4259e19"
         },
         {
             "type": "file",
