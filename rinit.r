@@ -22,6 +22,8 @@ library(yaml)
 library(gt)
 library(marquee)
 library(PrettyCols)
+library(ofceweb)
+library(rsvg)
 
 systemfonts::add_fonts(system.file("fonts", "OpenSans", "OpenSans-Regular.ttf", package="ofce"))
 systemfonts::add_fonts(list.files(system.file("fonts", "Arimo", package="ofce"), full.names = TRUE))
