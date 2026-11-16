@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/arimo-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/arimo-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Arimo';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/arimo-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Arimo';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../fonts/arimo-bolditalic.ttf') format('truetype');
+}
+
