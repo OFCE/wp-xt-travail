@@ -24,6 +24,7 @@ library(marquee)
 library(PrettyCols)
 library(ofceweb)
 library(rsvg)
+library(countrycode)
 
 systemfonts::add_fonts(system.file("fonts", "OpenSans", "OpenSans-Regular.ttf", package="ofce"))
 systemfonts::add_fonts(list.files(system.file("fonts", "Arimo", package="ofce"), full.names = TRUE))
@@ -35,7 +36,7 @@ options(
   ofce.background_color = "transparent",
   ofce.source_data.src_in = "project",
   ofce.caption.ofce = FALSE,
-  ofce.marquee = TRUE,
+  ofce.marquee = "munch",
   ofce.caption.srcplus = NULL,
   ofce.caption.wrap = 0,
   sourcoise.init_fn = ofce::init_qmd,
@@ -88,3 +89,17 @@ conflicted::conflict_prefer_all("dplyr", quiet = TRUE)
 conflicted::conflicts_prefer(lubridate::year, .quiet = TRUE)
 conflicted::conflicts_prefer(lubridate::month, .quiet = TRUE)
 conflicted::conflicts_prefer(lubridate::quarter, .quiet = TRUE)
+
+lbl <- function(x, format=NULL) {
+  if(is.null(format))
+    if(is.null(dim(x)))
+      fmt <- ifelse(max(stringr::str_length(x))==2, "eurostat", "iso3c")
+  else
+    fmt <- ifelse(max(stringr::str_length(x[,1]))==2, "eurostat", "iso3c")
+  else
+    fmt <- format
+  if(is.null(dim(x)))
+    return(countrycode(x, fmt, "country.name.fr"))
+  x |>
+    mutate(across(1, ~countrycode(.x, fmt, "country.name.fr")))
+}

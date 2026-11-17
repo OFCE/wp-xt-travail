@@ -1,0 +1,133 @@
+INFO [2026-11-16 18:08:47] Refreshing 17 source files
+INFO [2026-11-16 18:08:47] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+SUCCESS [2026-11-16 18:08:50] R/nace.r (forced) in 2.41 sec. (10.3K)
+INFO [2026-11-16 18:08:50] sourcoising C:/Users/timbe/github/wp-xt-travail/R/vaq.r
+INFO [2026-11-16 18:08:51] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:08:51] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:08:51] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:08:51] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:08:51] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:08:51] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:08:51] sourcoising C:/Users/timbe/github/wp-xt-travail/R/naq10_e.r
+INFO [2026-11-16 18:08:52] Tracked files not found, check your paths.
+INFO [2026-11-16 18:08:52] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:08:52] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:08:52] R/nace.r cache valid (10,3K)
+SUCCESS [2026-11-16 18:09:00] R/naq10_e.r (forced) in 8,16 sec. (3,26M)
+SUCCESS [2026-11-16 18:09:06] R/vaq.r cache valid (9,22M)
+INFO [2026-11-16 18:09:06] sourcoising C:/Users/timbe/github/wp-xt-travail/R/naq10_e.r
+INFO [2026-11-16 18:09:06] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:06] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:06] R/nace.r cache valid (10,3K)
+SUCCESS [2026-11-16 18:09:10] R/naq10_e.r (forced) in 3,78 sec. (3,26M)
+INFO [2026-11-16 18:09:10] sourcoising C:/Users/timbe/github/wp-xt-travail/R/mixte.r
+INFO [2026-11-16 18:09:10] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:10] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:10] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:09:11] sourcoising C:/Users/timbe/github/wp-xt-travail/R/naq10_e.r
+INFO [2026-11-16 18:09:11] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:11] R/naq10_e.r cache valid (3,26M)
+SUCCESS [2026-11-16 18:09:13] R/mixte.r (forced) in 2,75 sec. (2,15M)
+INFO [2026-11-16 18:09:13] sourcoising C:/Users/timbe/github/wp-xt-travail/R/france-melodi.r
+INFO [2026-11-16 18:09:13] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:13] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:13] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:09:13] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:13] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:13] R/nace.r cache valid (10,3K)
+SUCCESS [2026-11-16 18:09:26] R/france-melodi.r (forced) in 13,43 sec. (214K)
+INFO [2026-11-16 18:09:26] sourcoising C:/Users/timbe/github/wp-xt-travail/R/snf_international.r
+INFO [2026-11-16 18:09:26] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:26] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:26] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:09:26] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:26] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:26] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:09:26] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:27] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:27] R/nace.r cache valid (10,3K)
+SUCCESS [2026-11-16 18:09:29] R/snf_international.r (forced) in 2,87 sec. (20,2K)
+INFO [2026-11-16 18:09:29] sourcoising C:/Users/timbe/github/wp-xt-travail/R/annexeD.r
+INFO [2026-11-16 18:09:29] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:29] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:29] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:09:29] sourcoising C:/Users/timbe/github/wp-xt-travail/R/mixte.r
+INFO [2026-11-16 18:09:29] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:29] R/mixte.r cache valid (2,15M)
+INFO [2026-11-16 18:09:29] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:30] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:30] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:09:30] sourcoising C:/Users/timbe/github/wp-xt-travail/R/vaq.r
+INFO [2026-11-16 18:09:30] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:30] R/vaq.r cache valid (9,22M)
+INFO [2026-11-16 18:09:30] sourcoising C:/Users/timbe/github/wp-xt-travail/R/mixte.r
+INFO [2026-11-16 18:09:30] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:30] R/mixte.r cache valid (2,15M)
+INFO [2026-11-16 18:09:30] sourcoising C:/Users/timbe/github/wp-xt-travail/R/france-melodi.r
+INFO [2026-11-16 18:09:30] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:30] R/france-melodi.r cache valid (214K)
+INFO [2026-11-16 18:09:30] sourcoising C:/Users/timbe/github/wp-xt-travail/R/naq10_e.r
+INFO [2026-11-16 18:09:30] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:30] R/naq10_e.r cache valid (3,26M)
+SUCCESS [2026-11-16 18:09:31] R/annexeD.r (forced) in 1,48 sec. (662K)
+INFO [2026-11-16 18:09:31] sourcoising C:/Users/timbe/github/wp-xt-travail/R/assets.r
+INFO [2026-11-16 18:09:31] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:31] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:31] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:09:31] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:31] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:31] R/nace.r cache valid (10,3K)
+SUCCESS [2026-11-16 18:09:35] R/assets.r (forced) in 4,38 sec. (780K)
+INFO [2026-11-16 18:09:35] sourcoising C:/Users/timbe/github/wp-xt-travail/R/decomp.r
+INFO [2026-11-16 18:09:35] sourcoising C:/Users/timbe/github/wp-xt-travail/R/vaq.r
+INFO [2026-11-16 18:09:35] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:35] R/vaq.r cache valid (9,22M)
+INFO [2026-11-16 18:09:35] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:36] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:36] R/nace.r cache valid (10,3K)
+SUCCESS [2026-11-16 18:09:36] R/decomp.r (forced) in 0,22 sec. (12,2K)
+INFO [2026-11-16 18:09:36] sourcoising C:/Users/timbe/github/wp-xt-travail/R/earn.r
+SUCCESS [2026-11-16 18:09:37] R/earn.r (forced) in 0,79 sec. (6,52K)
+INFO [2026-11-16 18:09:37] sourcoising C:/Users/timbe/github/wp-xt-travail/R/france CN 2014.r
+SUCCESS [2026-11-16 18:09:40] R/france CN 2014.r (forced) in 3,07 sec. (45,3K)
+INFO [2026-11-16 18:09:40] sourcoising C:/Users/timbe/github/wp-xt-travail/R/ggvanettebrute.r
+INFO [2026-11-16 18:09:41] sourcoising C:/Users/timbe/github/wp-xt-travail/R/vaq.r
+INFO [2026-11-16 18:09:41] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:41] R/vaq.r cache valid (9,22M)
+SUCCESS [2026-11-16 18:09:41] R/ggvanettebrute.r cache valid (504K)
+INFO [2026-11-16 18:09:41] sourcoising C:/Users/timbe/github/wp-xt-travail/R/households.r
+INFO [2026-11-16 18:09:41] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:41] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:41] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:09:41] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:09:41] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:41] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:09:43] sourcoising C:/Users/timbe/github/wp-xt-travail/R/vaq.r
+INFO [2026-11-16 18:09:43] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:43] R/vaq.r cache valid (9,22M)
+INFO [2026-11-16 18:09:43] sourcoising C:/Users/timbe/github/wp-xt-travail/R/vaq.r
+INFO [2026-11-16 18:09:43] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:43] R/vaq.r cache valid (9,22M)
+SUCCESS [2026-11-16 18:09:43] R/households.r (forced) in 1,8 sec. (84,5K)
+INFO [2026-11-16 18:09:43] sourcoising C:/Users/timbe/github/wp-xt-travail/R/oecd.r
+SUCCESS [2026-11-16 18:09:44] R/oecd.r cache valid (137K)
+INFO [2026-11-16 18:09:44] sourcoising C:/Users/timbe/github/wp-xt-travail/R/psali.r
+INFO [2026-11-16 18:09:45] sourcoising C:/Users/timbe/github/wp-xt-travail/R/snf_international.r
+INFO [2026-11-16 18:09:45] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:09:45] R/snf_international.r cache valid (20,2K)
+INFO [2026-11-16 18:09:45] sourcoising C:/Users/timbe/github/wp-xt-travail/R/salaires.r
+SUCCESS [2026-11-16 18:10:01] R/salaires.r (forced) in 16,12 sec. (161K)
+INFO [2026-11-16 18:10:01] sourcoising C:/Users/timbe/github/wp-xt-travail/R/snf_ratio.r
+INFO [2026-11-16 18:10:01] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:10:01] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:10:01] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:10:01] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:10:01] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:10:01] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:10:02] sourcoising C:/Users/timbe/github/wp-xt-travail/R/nace.r
+INFO [2026-11-16 18:10:02] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:10:02] R/nace.r cache valid (10,3K)
+INFO [2026-11-16 18:10:02] sourcoising C:/Users/timbe/github/wp-xt-travail/R/naq10_e.r
+INFO [2026-11-16 18:10:02] Tracked files not found, check your paths.
+SUCCESS [2026-11-16 18:10:02] R/naq10_e.r cache valid (3,26M)
+SUCCESS [2026-11-16 18:10:09] R/snf_ratio.r (forced) in 7,33 sec. (221K)
