@@ -1,0 +1,34 @@
+// Page « Qui sommes-nous » (À propos & contact).
+// Ciblée par `page-class: page-qui-sommes-nous` dans le front matter du .qmd.
+html.page-qui-sommes-nous {
+    body {
+        background-color: var(--ife-grey-light);
+    }
+    #quarto-content {
+        display: block;
+    }
+    .quarto-title-block:not(:empty) {
+        padding: 0 !important;
+        border-left: none !important;
+    }
+    // Les pages légales partagent cette page-class sans le bloc `.qui-sommes-nous-body` : la carte se pose sur `#quarto-content`.
+    #quarto-content:not(:has(.qui-sommes-nous-body)),
+    .qui-sommes-nous-body {
+        padding-block: var(--ife-spacer-5);
+        padding-inline: var(--ife-page-pad);
+        background-color: var(--ife-blanc);
+        max-width: 80%;
+        margin-block: var(--ife-spacer-5);
+        margin-inline: auto;
+        > * {
+            max-width: 800px;
+            margin-inline: auto;
+        }
+    }
+    // Les bandeaux `column-screen` passent `main` en grille : la carte reprend toute la largeur.
+    .qui-sommes-nous-body {
+        grid-column: screen-start / screen-end;
+        // Sans bordure : inutile de redessiner le trait diagonal.
+        @include ife-cut-corner(lg);
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "timing": [0.6764],
+  "date": ["2026-11-24 10:34:56.398348"],
+  "size": [909440],
+  "args": [],
+  "lapse": ["never"],
+  "src": ["R/psali.r"],
+  "src_hash": ["91ad6ce273d27ead8f653a98606db1da48f7f919"],
+  "arg_hash": ["4262323b"],
+  "track_hash": [0],
+  "track": [],
+  "wd": ["file"],
+  "qmd_file": [],
+  "src_in": ["project"],
+  "data_hash": ["acda61fe484dbdea32b1ecd4a35f6a95"],
+  "priority": [10],
+  "file_size": [322744],
+  "data_date": ["2026-11-24 10:34:56.491921"],
+  "data_file": ["psali-4262323b_acda61fe484dbdea32b1ecd4a35f6a95.qs2"]
+}

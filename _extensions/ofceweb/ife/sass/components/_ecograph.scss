@@ -1,0 +1,10 @@
+// L'Ecograph : bannière unique, image de fond, CTA contour.
+// Contrat de classes pour le shortcode `ecograph` (ife-website).
+// Contenu commun : `_band-publication.scss`.
+// Structure : `.ife-band.ife-band--cover.ecograph`.
+.ecograph {
+    @include ife-band-publication;
+    .ife-band__media::after {
+        background: var(--ife-band-gradient);
+    }
+}

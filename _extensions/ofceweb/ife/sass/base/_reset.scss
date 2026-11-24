@@ -1,0 +1,32 @@
+// Remove default margin/padding at the top/bottom of the page
+// It creates undesired whitespace on the home page
+#quarto-document-content {
+    padding: 0;
+    margin: 0;
+}
+
+// This Quarto class is used to create full-width blocks of content
+.column-screen-inset-shaded {
+    margin-bottom: 0 !important;
+}
+
+// Quarto's default grid reserves 60px below the content for pagination.
+// That leaves a white band before the footer; drop the min height to 0.
+.page-rows-contents {
+    grid-template-rows: [content-top] minmax(max-content, 1fr) [content-bottom] minmax(0, max-content) [page-bottom];
+}
+
+// Hide the navigation if there is no navigation
+nav.page-navigation:not(:has(a)) {
+    display: none;
+}
+
+// The contrast is not automatically adjusted for the active page
+ul.pagination li.active a {
+    color: var(--ife-blanc);
+}
+
+// Quarto bug that displays the search twice
+#quarto-search .aa-Autocomplete:nth-child(2) {
+    display: none;
+}

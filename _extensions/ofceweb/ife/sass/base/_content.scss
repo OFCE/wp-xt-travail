@@ -1,0 +1,65 @@
+// Éléments de contenu rendus par Quarto : liens, tableaux, légendes, citations, callouts.
+a {
+    text-decoration: none;
+}
+
+// Lien dans le texte : souligné, la couleur seule ne le distingue pas (RGAA 10.6).
+main p a,
+main li a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+// Focus à deux couleurs (WCAG C40) : anneau blanc collé à l'élément, anneau anthracite autour.
+// Une des deux couleurs contraste avec n'importe quel fond. Le forced-colors garde l'outline.
+:focus-visible {
+    outline: 2px solid var(--ife-primary);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--ife-blanc);
+}
+
+// Annexe Quarto (notes, références) : pas de transparence à 90 %, comme les titres.
+#quarto-appendix.default .quarto-appendix-heading,
+#quarto-appendix.default section *[role=doc-endnotes],
+#quarto-appendix.default section > *:not(a) {
+    opacity: 1;
+}
+
+// Pas d'icône de lien externe Quarto sur les boutons ni dans le header et le footer.
+.ife-btn.external::after,
+.ife-chrome a.external::after {
+    content: none;
+}
+
+.table {
+    font-size: var(--ife-fs-sm) !important;
+    text-align: start;
+}
+
+caption,
+.table-caption,
+.figure-caption,
+.panel-caption,
+.subfigure-caption,
+figcaption.quarto-float-caption {
+    color: var(--ife-primary) !important;
+    text-align: start !important;
+    font-size: var(--ife-fs-base) !important;
+    font-weight: 600 !important;
+    margin-bottom: var(--ife-spacer-2);
+}
+
+.blockquote {
+    color: var(--ife-primary);
+    border: none;
+    font-size: var(--ife-fs-sm);
+    line-height: 140%;
+    margin: 0em 0 1em 1em;
+    padding: 0;
+}
+
+.callout.callout-titled .callout-body > :last-child:not(.sourceCode),
+.callout.callout-titled .callout-body > div > :last-child:not(.sourceCode) {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}

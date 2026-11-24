@@ -1,0 +1,9 @@
+# Fichiers communs de la bande (docs/injection-bande.md) : le navigateur les
+# revalide à chaque page et reçoit un 304 s'ils n'ont pas changé. L'ETag et
+# Last-Modified d'Apache restent en place pour la revalidation.
+<IfModule mod_expires.c>
+    ExpiresActive Off
+</IfModule>
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache"
+</IfModule>

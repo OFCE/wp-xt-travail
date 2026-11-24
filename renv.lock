@@ -84,10 +84,10 @@
     },
     "KernSmooth": {
       "Package": "KernSmooth",
-      "Version": "2.23-26",
+      "Version": "2.23-27",
       "Source": "Repository",
       "Priority": "recommended",
-      "Date": "2024-12-10",
+      "Date": "2026-08-11",
       "Title": "Functions for Kernel Smoothing Supporting Wand & Jones (1995)",
       "Authors@R": "c(person(\"Matt\", \"Wand\", role = \"aut\", email = \"Matt.Wand@uts.edu.au\"), person(\"Cleve\", \"Moler\", role = \"ctb\", comment = \"LINPACK routines in src/d*\"), person(\"Brian\", \"Ripley\", role = c(\"trl\", \"cre\", \"ctb\"), email = \"Brian.Ripley@R-project.org\", comment = \"R port and updates\"))",
       "Note": "Maintainers are not available to give advice on using a package they did not author.",
@@ -1160,10 +1160,10 @@
     },
     "charport": {
       "Package": "charport",
-      "Version": "0.2.0",
+      "Version": "0.1.1",
       "Source": "Repository",
       "Title": "ALTREP String Interoperability",
-      "Date": "2026-11-06",
+      "Date": "2026-09-18",
       "Authors@R": "c( person(\"Travers\", \"Ching\", email = \"traversc@gmail.com\", role = c(\"aut\", \"cre\", \"cph\")), person(\"R Consortium\", role = \"fnd\", comment = \"Infrastructure Steering Committee grant: Universal ALTREP Interoperability for Strings\"))",
       "Description": "Provides infrastructure for interoperable ALTREP character vectors. Producers of ALTREP string classes can register access methods, allowing consumers to read supported character vectors through a common interface without materializing them as ordinary R strings. Also provides 'charvec', a reference ALTREP string implementation backed by stable memory slices, with support for efficient and multithreaded construction.",
       "License": "MIT + file LICENSE",
@@ -1180,7 +1180,7 @@
       ],
       "URL": "https://github.com/charbase/charport, https://charbase.github.io/charport/",
       "BugReports": "https://github.com/charbase/charport/issues",
-      "Config/roxygen2/version": "8.1.0",
+      "Config/roxygen2/version": "8.0.0",
       "Config/Needs/website": "pkgdown, xml2",
       "NeedsCompilation": "yes",
       "Author": "Travers Ching [aut, cre, cph], R Consortium [fnd] (Infrastructure Steering Committee grant: Universal ALTREP Interoperability for Strings)",
@@ -2239,7 +2239,7 @@
     },
     "flextable": {
       "Package": "flextable",
-      "Version": "0.10.4",
+      "Version": "0.10.5",
       "Source": "Repository",
       "Type": "Package",
       "Title": "Functions for Tabular Reporting",
@@ -2250,7 +2250,7 @@
       "BugReports": "https://github.com/davidgohel/flextable/issues",
       "Imports": [
         "data.table (>= 1.13.0)",
-        "gdtools (>= 0.5.3)",
+        "gdtools (>= 0.6.0)",
         "graphics",
         "grDevices",
         "grid",
@@ -2273,7 +2273,7 @@
         "cluster",
         "commonmark",
         "doconv (>= 0.3.0)",
-        "equatags (>= 0.3.0)",
+        "equatags (>= 0.4.0)",
         "formatters",
         "ggplot2",
         "gtable",
@@ -5037,7 +5037,7 @@
     },
     "marquee": {
       "Package": "marquee",
-      "Version": "1.3.0",
+      "Version": "1.2.1",
       "Source": "Repository",
       "Title": "Markdown Parser and Renderer for R Graphics",
       "Authors@R": "c( person(\"Thomas Lin\", \"Pedersen\", , \"thomas.pedersen@posit.co\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0002-5147-4711\")), person(\"Martin\", \"Mitáš\", role = \"aut\", comment = \"Author of MD4C\"), person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"), comment = c(ROR = \"03wc8by49\")) )",
@@ -5083,7 +5083,7 @@
       "Config/testthat/edition": "3",
       "Config/usethis/last-upkeep": "2025-04-23",
       "Encoding": "UTF-8",
-      "RoxygenNote": "7.3.3",
+      "RoxygenNote": "7.3.2",
       "NeedsCompilation": "yes",
       "Author": "Thomas Lin Pedersen [aut, cre] (ORCID: <https://orcid.org/0000-0002-5147-4711>), Martin Mitáš [aut] (Author of MD4C), Posit Software, PBC [cph, fnd] (ROR: <https://ror.org/03wc8by49>)",
       "Maintainer": "Thomas Lin Pedersen <thomas.pedersen@posit.co>",
@@ -5269,7 +5269,7 @@
     },
     "munch": {
       "Package": "munch",
-      "Version": "0.0.3",
+      "Version": "0.0.2",
       "Source": "Repository",
       "Title": "Rich Inline Text for 'grid' Graphics and 'flextable'",
       "Authors@R": "c( person(\"David\", \"Gohel\", , \"david.gohel@ardata.fr\", role = c(\"aut\", \"cre\")), person(\"ArData\", role = \"cph\") )",
@@ -5280,13 +5280,12 @@
       "Imports": [
         "cli",
         "commonmark",
-        "flextable (>= 0.10.4)",
+        "flextable",
         "patchwork",
-        "gdtools (>= 0.5.3)",
+        "gdtools",
         "ggplot2",
         "grid",
         "methods",
-        "officer (>= 0.7.8)",
         "systemfonts",
         "xml2"
       ],
@@ -5305,7 +5304,7 @@
       "VignetteBuilder": "knitr, rmarkdown",
       "Config/testthat/edition": "3",
       "Encoding": "UTF-8",
-      "Config/roxygen2/version": "8.1.1",
+      "RoxygenNote": "7.3.3",
       "NeedsCompilation": "no",
       "Author": "David Gohel [aut, cre], ArData [cph]",
       "Maintainer": "David Gohel <david.gohel@ardata.fr>",
@@ -5488,6 +5487,7 @@
       ],
       "Suggests": [
         "askpass",
+        "jsonvalidate",
         "knitr",
         "rmarkdown",
         "rstudioapi",
@@ -5502,11 +5502,11 @@
       "Author": "Xavier Timbeau [aut, cre], Anissa Saumtally [aut], Elliot Aurissergues [aut], Charles Bordet [aut]",
       "Maintainer": "Xavier Timbeau <xavier.timbeau@sciencespo.fr>",
       "RemoteType": "github",
+      "RemoteHost": "api.github.com",
       "RemoteUsername": "ofceweb",
       "RemoteRepo": "ofceweb",
       "RemoteRef": "main",
-      "RemoteSha": "df5147043014aafc75886dec88c1e21434d63712",
-      "RemoteHost": "api.github.com"
+      "RemoteSha": "48f59d589f454835638e03c64fb425e923f1b237"
     },
     "officer": {
       "Package": "officer",
@@ -5589,13 +5589,14 @@
     },
     "otel": {
       "Package": "otel",
-      "Version": "0.3.0",
+      "Version": "0.2.0",
       "Source": "Repository",
       "Title": "OpenTelemetry R API",
       "Authors@R": "person(\"Gábor\", \"Csárdi\", , \"csardi.gabor@gmail.com\", role = c(\"aut\", \"cre\"))",
       "Description": "High-quality, ubiquitous, and portable telemetry to enable effective observability. OpenTelemetry is a collection of tools, APIs, and SDKs used to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) for analysis in order to understand your software's performance and behavior. This package implements the OpenTelemetry API: <https://opentelemetry.io/docs/specs/otel/>. Use this package as a dependency if you want to instrument your R package for OpenTelemetry.",
       "License": "MIT + file LICENSE",
       "Encoding": "UTF-8",
+      "RoxygenNote": "7.3.2.9000",
       "Depends": [
         "R (>= 3.6.0)"
       ],
@@ -5604,7 +5605,7 @@
         "cli",
         "glue",
         "jsonlite",
-        "otelsdk (>= 0.2.4)",
+        "otelsdk",
         "processx",
         "shiny",
         "spelling",
@@ -5615,8 +5616,8 @@
       "Config/Needs/website": "tidyverse/tidytemplate",
       "Config/testthat/edition": "3",
       "URL": "https://otel.r-lib.org, https://github.com/r-lib/otel",
+      "Additional_repositories": "https://github.com/r-lib/otelsdk/releases/download/devel",
       "BugReports": "https://github.com/r-lib/otel/issues",
-      "Config/roxygen2/version": "8.1.1",
       "NeedsCompilation": "no",
       "Author": "Gábor Csárdi [aut, cre]",
       "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
@@ -5624,7 +5625,7 @@
     },
     "pak": {
       "Package": "pak",
-      "Version": "0.11.2",
+      "Version": "0.11.1",
       "Source": "Repository",
       "Title": "Another Approach to Package Installation",
       "Authors@R": "c( person(\"Gábor\", \"Csárdi\", , \"csardi.gabor@gmail.com\", role = c(\"aut\", \"cre\")), person(\"Jim\", \"Hester\", role = \"aut\"), person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"), comment = c(ROR = \"03wc8by49\")), person(\"Winston\", \"Chang\", role = \"ctb\", comment = \"R6, callr, processx\"), person(\"Ascent Digital Services\", role = c(\"cph\", \"fnd\"), comment = \"callr, processx\"), person(\"Hadley\", \"Wickham\", role = c(\"ctb\", \"cph\"), comment = \"cli, curl, pkgbuild, yaml\"), person(\"Jeroen\", \"Ooms\", role = \"ctb\", comment = \"curl, jsonlite\"), person(\"Maëlle\", \"Salmon\", role = \"ctb\", comment = \"desc, pkgsearch\"), person(\"Duncan\", \"Temple Lang\", role = \"ctb\", comment = \"jsonlite\"), person(\"Lloyd\", \"Hilaiel\", role = \"cph\", comment = \"jsonlite\"), person(\"Alec\", \"Wong\", role = \"ctb\", comment = \"keyring\"), person(\"Michel Berkelaar and lpSolve authors\", role = \"ctb\", comment = \"lpSolve\"), person(\"R Consortium\", role = \"fnd\", comment = \"pkgsearch\"), person(\"Jay\", \"Loden\", role = \"ctb\", comment = \"ps\"), person(\"Dave\", \"Daeschler\", role = \"ctb\", comment = \"ps\"), person(\"Giampaolo\", \"Rodola\", role = \"ctb\", comment = \"ps\"), person(\"Shawn\", \"Garbett\", role = \"ctb\", comment = \"yaml\"), person(\"Jeremy\", \"Stephens\", role = \"ctb\", comment = \"yaml\"), person(\"Kirill\", \"Simonov\", role = \"ctb\", comment = \"yaml\"), person(\"Yihui\", \"Xie\", role = \"ctb\", comment = \"yaml\"), person(\"Zhuoer\", \"Dong\", role = \"ctb\", comment = \"yaml\"), person(\"Jeffrey\", \"Horner\", role = \"ctb\", comment = \"yaml\"), person(\"Will\", \"Beasley\", role = \"ctb\", comment = \"yaml\"), person(\"Brendan\", \"O'Connor\", role = \"ctb\", comment = \"yaml\"), person(\"Gregory\", \"Warnes\", role = \"ctb\", comment = \"yaml\"), person(\"Michael\", \"Quinn\", role = \"ctb\", comment = \"yaml\"), person(\"Zhian\", \"Kamvar\", role = \"ctb\", comment = \"yaml\"), person(\"Charlie\", \"Gao\", role = \"ctb\", comment = \"yaml\"), person(\"Kuba\", \"Podgórski\", role = \"ctb\", comment = \"zip\"), person(\"Rich\", \"Geldreich\", role = \"ctb\", comment = \"zip\") )",
@@ -7466,7 +7467,7 @@
     "sourcoise": {
       "Package": "sourcoise",
       "Version": "1.1.1",
-      "Source": "GitHub",
+      "Source": "Repository",
       "Type": "Package",
       "Title": "Source a Script and Cache",
       "Authors@R": "person(\"Xavier\", \"Timbeau\", , \"xavier.timbeau@sciencespo.fr\", role = c(\"aut\", \"cre\", \"cph\"))",
@@ -7509,18 +7510,12 @@
       "VignetteBuilder": "quarto",
       "Config/testthat/edition": "3",
       "Encoding": "UTF-8",
-      "LazyData": "true",
-      "Roxygen": "list(markdown = TRUE)",
       "SystemRequirements": "Quarto command line tools (https://github.com/quarto-dev/quarto-cli).",
       "Config/roxygen2/version": "8.1.1",
+      "NeedsCompilation": "no",
       "Author": "Xavier Timbeau [aut, cre, cph]",
       "Maintainer": "Xavier Timbeau <xavier.timbeau@sciencespo.fr>",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteUsername": "xtimbeau",
-      "RemoteRepo": "sourcoise",
-      "RemoteRef": "main",
-      "RemoteSha": "152b34420d7d12bf1fc7ea9dcae743e659ec6224"
+      "Repository": "CRAN"
     },
     "spacesXYZ": {
       "Package": "spacesXYZ",
@@ -7569,7 +7564,7 @@
       "NeedsCompilation": "no",
       "Author": "Nikita Tkachenko [aut, cre, cph] (<https://orcid.org/0009-0003-8681-3335>)",
       "Maintainer": "Nikita Tkachenko <nikita@nikitoshina.com>",
-      "Repository": "https://packagemanager.posit.co/cran/2026-04-23"
+      "Repository": "CRAN"
     },
     "stringdist": {
       "Package": "stringdist",
@@ -7772,7 +7767,7 @@
     },
     "systemfonts": {
       "Package": "systemfonts",
-      "Version": "1.3.3",
+      "Version": "1.3.4",
       "Source": "Repository",
       "Type": "Package",
       "Title": "System Native Font Finding",

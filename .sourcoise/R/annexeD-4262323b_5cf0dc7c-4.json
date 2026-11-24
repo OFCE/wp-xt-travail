@@ -1,0 +1,20 @@
+{
+  "timing": [0.9285],
+  "date": ["2026-11-24 10:34:45.266546"],
+  "size": [678240],
+  "args": [],
+  "lapse": ["never"],
+  "src": ["R/annexeD.r"],
+  "src_hash": ["8cc1c2efcca5eb3655cbd9c5ab16de0cddb72aec"],
+  "arg_hash": ["4262323b"],
+  "track_hash": [0],
+  "track": [],
+  "wd": ["file"],
+  "qmd_file": [],
+  "src_in": ["project"],
+  "data_hash": ["3c3beb9ca3bd8023f8373d9a215de89a"],
+  "priority": [10],
+  "file_size": [101517],
+  "data_date": ["2026-11-24 10:34:45.289277"],
+  "data_file": ["annexeD-4262323b_3c3beb9ca3bd8023f8373d9a215de89a.qs2"]
+}

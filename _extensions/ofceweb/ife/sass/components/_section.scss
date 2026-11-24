@@ -1,0 +1,13 @@
+.section {
+    padding: var(--ife-spacer-5) 0;
+    > .container {
+        box-sizing: border-box;
+        max-width: var(--ife-page-max);
+        width: 100%;
+        padding-inline: var(--ife-page-pad);
+        margin-inline: auto;
+    }
+    .header-anchor {
+        display: none !important;
+    }
+}

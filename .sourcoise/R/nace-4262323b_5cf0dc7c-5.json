@@ -1,0 +1,20 @@
+{
+  "timing": [2.4454],
+  "date": ["2026-11-24 10:34:02.951632"],
+  "size": [10536],
+  "args": [],
+  "lapse": ["never"],
+  "src": ["R/nace.r"],
+  "src_hash": ["519c7b53a224e60fdd6861a9d2f8269e30998565"],
+  "arg_hash": ["4262323b"],
+  "track_hash": [0],
+  "track": [],
+  "wd": ["file"],
+  "qmd_file": [],
+  "src_in": ["project"],
+  "data_hash": ["d66bf5a503128272750eb6b1a641d82f"],
+  "priority": [30],
+  "file_size": [1194],
+  "data_date": ["2026-11-16 18:08:50.582598"],
+  "data_file": ["nace-4262323b_d66bf5a503128272750eb6b1a641d82f.qs2"]
+}

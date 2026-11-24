@@ -1,0 +1,39 @@
+// Titre de section serif, sans filet.
+// `.ife-section-title` : primitive `components.section_title()`.
+// `.section-header` : enveloppe de `utils.section_header_html()`.
+.ife-section-title {
+    margin: 0 0 var(--ife-spacer-4);
+    @include ife-h2-lg;
+    color: inherit;
+}
+
+.section-header {
+    display: block;
+    margin-bottom: var(--ife-spacer-4);
+    color: inherit;
+    text-decoration: none;
+    .ife-section-title {
+        margin-bottom: 0;
+    }
+}
+
+a.section-header:hover {
+    color: inherit;
+    .ife-section-title {
+        opacity: 0.85;
+    }
+}
+
+// Titre à gauche, bouton `components.section_more_button()` à droite.
+// Le bouton passe sous le titre quand la place manque.
+.section-header-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--ife-spacer-3);
+    margin-bottom: var(--ife-spacer-4);
+    .section-header {
+        margin-bottom: 0;
+    }
+}

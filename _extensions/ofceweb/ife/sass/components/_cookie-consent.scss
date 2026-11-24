@@ -1,0 +1,77 @@
+// Bandeau cookies TermsFeed (palette light). Ses styles sont injectés par cookie-consent.js.
+.termsfeed-com---nb {
+    border: 2px solid var(--ife-primary);
+}
+
+// Boutons d'action du bandeau et du centre de préférences : comme `.ife-btn--solid-dark`,
+// plein anthracite, évidé au survol.
+// Ciblés par identifiant pour passer devant les styles injectés après le thème.
+:is(#termsfeed-com---nb, #termsfeed-com---preferences-center) :is(.cc-nb-okagree, .cc-nb-reject, .cc-nb-changep, .cc-cp-foot-save) {
+    padding: var(--ife-spacer-2) var(--ife-spacer-3);
+    border: 4px solid var(--ife-primary);
+    border-radius: 0;
+    background-color: var(--ife-primary);
+    color: var(--ife-blanc);
+    @include ife-text-base-bold;
+    opacity: 1;
+    &:hover {
+        background-color: transparent;
+        color: var(--ife-primary);
+    }
+    // Pas d'anneau orange de la bibliothèque ; anneau anthracite détaché au clavier (RGAA 10.7).
+    &:focus {
+        box-shadow: none;
+    }
+    &:focus-visible {
+        outline: 2px solid var(--ife-primary);
+        outline-offset: 4px;
+    }
+}
+
+// Focus à deux couleurs du site (base/_content.scss). La bibliothèque retire l'outline
+// et le remplace par des anneaux verts, orange ou couleur du fond.
+:is(#termsfeed-com---nb, #termsfeed-com---preferences-center) {
+    :is(a, button, select, input):focus {
+        box-shadow: none;
+    }
+    :is(a, select, .cc-pc-head-close):focus-visible {
+        outline: 2px solid var(--ife-primary);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 2px var(--ife-blanc);
+    }
+    // La bibliothèque ajoute une bordure verte au focus du « ✕ ».
+    .cc-pc-head-close:focus {
+        border: 0;
+    }
+    // Onglets empilés sur toute la largeur : anneau à l'intérieur pour ne pas déborder
+    // sur l'onglet voisin. Blanc au bord, anthracite dedans.
+    .cc-cp-body-tabs-item-link:focus-visible {
+        outline: 2px solid var(--ife-primary);
+        outline-offset: -4px;
+        box-shadow: inset 0 0 0 2px var(--ife-blanc);
+    }
+    // Onglet actif : la palette light le force en #fbfbfb (!important), 1,2:1 avec les autres onglets.
+    .cc-cp-body-tabs-item[active=true] {
+        background: var(--ife-primary) !important;
+        .cc-cp-body-tabs-item-link {
+            color: var(--ife-blanc);
+        }
+    }
+    // Interrupteurs : bordure et fond actif en primary (gris #d9d9d9 et vert #55d069 sous 3:1).
+    input.cc-custom-checkbox + label::before,
+    input.cc-custom-checkbox + label::after {
+        border-color: var(--ife-primary);
+    }
+    input.cc-custom-checkbox:checked + label::before {
+        background: var(--ife-primary);
+    }
+    // Interrupteurs : la case est masquée (appearance: none), l'anneau va sur le dessin du label.
+    input.cc-custom-checkbox:focus-visible {
+        outline: none;
+        + label::before {
+            outline: 2px solid var(--ife-primary);
+            outline-offset: 2px;
+            box-shadow: 0 0 0 2px var(--ife-blanc);
+        }
+    }
+}

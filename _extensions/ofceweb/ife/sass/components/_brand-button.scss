@@ -1,0 +1,81 @@
+// Boutons de marque du chrome header (IFE-OFCE, IFE-CEPII).
+// Variantes : --ofce (bordeaux), --cepii (turquoise).
+.ife-brand-btns {
+    display: flex;
+    align-items: center;
+    gap: var(--ife-spacer-4);
+}
+
+.ife-brand-btn {
+    --ife-brand-color: var(--ife-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ife-spacer-2);
+    padding: var(--ife-spacer-2) var(--ife-spacer-3);
+    background-color: var(--ife-brand-color);
+    border: 4px solid var(--ife-brand-color);
+    color: var(--ife-blanc);
+    font-family: var(--ife-font-body);
+    font-size: var(--ife-fs-category);
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    i {
+        font-size: var(--ife-icon-size);
+        line-height: 1;
+    }
+    // Logo blanc découpé par un masque SVG : il prend la couleur du texte du bouton.
+    &__logo {
+        display: block;
+        height: 1rem;
+        background-color: currentColor;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+    }
+    &:link,
+    &:visited {
+        color: var(--ife-blanc);
+    }
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+    // Survol : couleurs inversées (fond blanc, logo et contour à la couleur de marque).
+    // :is(:link, :visited) passe devant `.ife-chrome a:hover`.
+    &:hover,
+    &:focus-visible {
+        background-color: var(--ife-blanc);
+        border-color: var(--ife-brand-color);
+    }
+    &:is(:link, :visited):is(:hover, :focus-visible) {
+        color: var(--ife-brand-color);
+    }
+    &:focus-visible {
+        outline: 2px solid var(--ife-primary);
+        outline-offset: 2px;
+    }
+    &--ofce {
+        --ife-brand-color: var(--ife-ofce);
+        .ife-brand-btn__logo {
+            aspect-ratio: 422 / 104;
+            mask-image: url("#{$ife-img-path}/IFE-OFCE_logo_blanc.svg");
+        }
+    }
+    &--cepii {
+        --ife-brand-color: var(--ife-cepii);
+        .ife-brand-btn__logo {
+            aspect-ratio: 499 / 105;
+            mask-image: url("#{$ife-img-path}/IFE-CEPII_logo_blanc.svg");
+        }
+    }
+}
+
+// Contraste élevé : le fond du logo serait remplacé par la couleur du fond.
+@media (forced-colors: active) {
+    .ife-brand-btn__logo {
+        forced-color-adjust: none;
+        background-color: LinkText;
+    }
+}

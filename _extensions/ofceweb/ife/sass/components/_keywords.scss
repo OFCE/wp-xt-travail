@@ -1,0 +1,30 @@
+// Rangée de mots-clés.
+// Contrat de classes pour `components.keywords_row()` (`_modules/components.lua`).
+.ife-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--ife-spacer-1) var(--ife-spacer-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        line-height: 1;
+        i {
+            font-size: var(--ife-icon-size);
+            line-height: 1;
+        }
+    }
+    &__item {
+        @include ife-category;
+        font-weight: 400;
+        color: var(--ife-primary);
+        text-transform: uppercase;
+        // &:hover {
+        //     text-decoration: underline;
+        //     text-underline-offset: 0.15em;
+        // }
+    }
+}

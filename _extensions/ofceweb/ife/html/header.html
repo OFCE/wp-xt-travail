@@ -1,0 +1,58 @@
+<header class="ife-chrome ife-header">
+  <div class="ife-chrome__inner">
+    <a class="ife-lockup" href="/" aria-label="IFE, Institut Français d’Économie — Accueil">
+      <img class="ife-lockup__logo" src="$if(ife-brand-logo)$$ife-brand-logo$$else$/assets/img/IFE_Institut_logo_anthrancite.svg$endif$" alt=""/>
+    </a>
+    <button type="button" class="ife-nav-toggle" aria-controls="ife-header-menu" aria-expanded="false" aria-label="Ouvrir le menu">
+      <i class="bi bi-list" aria-hidden="true"></i>
+    </button>
+    <nav class="ife-header__end" id="ife-header-menu" aria-label="Menu principal">
+      <a class="ife-header__about" href="/ife/qui_sommes_nous.html">À propos et contact</a>
+      <div class="ife-brand-btns">
+        <a class="ife-brand-btn ife-brand-btn--ofce" href="https://www.ofce.fr/" target="_blank" rel="noopener noreferrer">
+<!--          <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> -->
+          <span class="ife-brand-btn__logo" aria-hidden="true"></span>
+          <span class="visually-hidden">Site de l’OFCE (nouvelle fenêtre)</span>
+        </a>
+        <a class="ife-brand-btn ife-brand-btn--cepii" href="https://www.cepii.fr/" target="_blank" rel="noopener noreferrer">
+<!--          <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> -->
+          <span class="ife-brand-btn__logo" aria-hidden="true"></span>
+          <span class="visually-hidden">Site du CEPII (nouvelle fenêtre)</span>
+        </a>
+      </div>
+      <ul class="ife-social" aria-label="Contact et réseaux sociaux">
+        <li><a href="https://bsky.app/profile/ife-eco.bsky.social" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/img/bluesky_icon.svg" alt="Bluesky" />
+          <span class="visually-hidden"> (nouvelle fenêtre)</span>
+        </a></li>
+        <li><a href="https://www.linkedin.com/company/ife-eco/" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/img/linkedin_icon.svg" alt="LinkedIn" />
+          <span class="visually-hidden"> (nouvelle fenêtre)</span>
+        </a></li>
+<!-- Facebook : icône de la maquette. Renseigner href, puis retirer ce commentaire.
+        <li><a href="URL_DE_LA_PAGE_FACEBOOK" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/img/facebook_icon.svg" alt="Facebook" />
+          <span class="visually-hidden"> (nouvelle fenêtre)</span>
+        </a></li>
+-->
+        <li><a href="https://www.youtube.com/@IFE-eco" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/img/youtube_icon.svg" alt="YouTube" />
+          <span class="visually-hidden"> (nouvelle fenêtre)</span>
+        </a></li>
+<!-- Flux RSS : icône de la maquette. Renseigner href, puis retirer ce commentaire.
+        <li><a href="URL_DU_FLUX_RSS">
+          <img src="/assets/img/rss_icon.svg" alt="Flux RSS" />
+        </a></li>
+-->
+        <li><a href="mailto:contact@ife.eco">
+          <img src="/assets/img/envelope_icon.svg" alt="Écrire à contact@ife.eco" />
+        </a></li>
+      </ul>
+      <nav class="ife-lang" aria-label="Choix de la langue">
+        <a class="ife-lang__current" href="/" lang="fr" hreflang="fr">FR</a>
+        <span class="ife-lang__sep" aria-hidden="true"> / </span>
+        <span class="ife-lang__other" lang="en">EN <span class="visually-hidden">(Coming soon)</span></span>
+      </nav>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,128 @@
+// Bandeau sombre pleine largeur, image optionnelle.
+// Défaut : image débordant à droite, fondue par un dégradé.
+// Modificateur `.ife-band--cover` : image en fond, texte par-dessus.
+//
+// <section class="ife-band">
+//   <div class="ife-band__media"><img alt="" /></div>
+//   <div class="ife-band__inner">
+//     <div class="ife-band__content">...</div>
+//   </div>
+// </section>
+.ife-band {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    // Filet blanc en haut et en bas de tous les bandeaux : sépare deux bandeaux sombres qui se suivent.
+    border-top: 1px solid var(--ife-blanc);
+    border-bottom: 1px solid var(--ife-blanc);
+    background-color: var(--ife-primary);
+    color: var(--ife-blanc);
+    a:not(.ife-btn) {
+        color: inherit;
+        &:hover,
+        &:focus {
+            color: inherit;
+        }
+        &:focus-visible {
+            outline-color: var(--ife-blanc);
+        }
+    }
+    // Le titre est un h1 ou un h2 selon la page (voir `utils.band_heading_level`).
+    :is(h1, h2, h3, h4, h5, h6) {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    &__inner {
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        max-width: var(--ife-page-max);
+        min-height: 25.625rem;
+        margin-inline: auto;
+        padding: var(--ife-spacer-5) var(--ife-page-pad);
+        gap: var(--ife-gutter);
+    }
+    &__content {
+        position: relative;
+        z-index: 1;
+        max-width: 32rem;
+    }
+    &__media {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        pointer-events: none;
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to right,
+                var(--ife-primary) 0%,
+                transparent 55%
+            );
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.ife-band--cover {
+    .ife-band__media {
+        width: 100%;
+        left: 0;
+        &::after {
+            background: linear-gradient(
+                to right,
+                var(--ife-voile) 0%,
+                transparent 65%
+            );
+        }
+    }
+}
+
+@include ife-below($ife-bp-nav) {
+    .ife-band:not(.ife-band--cover) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .ife-band__inner {
+        min-height: 0;
+    }
+    .ife-band__content {
+        max-width: none;
+    }
+    .ife-band__media {
+        position: relative;
+        width: 100%;
+        height: 12rem;
+        &::after {
+            background: linear-gradient(
+                to bottom,
+                var(--ife-primary) 0%,
+                transparent 50%
+            );
+        }
+    }
+    .ife-band--cover .ife-band__media {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: auto;
+        &::after {
+            background: linear-gradient(
+                to bottom,
+                var(--ife-voile) 0%,
+                transparent 70%
+            );
+        }
+    }
+}

@@ -1,0 +1,52 @@
+// Grille de page : 1184px + pad 48px au desktop, 361px + pad 16px à 393px.
+body {
+    #quarto-sidebar,
+    #quarto-sidebar-glass {
+        display: none;
+    }
+    main {
+        margin: 0;
+    }
+}
+
+main.content > p:has(+section) {
+    margin-bottom: var(--ife-spacer-2);
+}
+
+main.content > section:first-of-type > h2:nth-child(1),
+main.content > section:first-of-type > .h2:nth-child(1) {
+    margin-top: 1em;
+}
+
+#quarto-content > * {
+    padding-top: 0;
+}
+
+.page-columns.page-full,
+.content,
+.body {
+    text-align: left !important;
+}
+
+// Bloc de titre et pied de page de Quarto, autour de la bande. Ces règles
+// restent dans le thème : ife-band.css (band.scss) ne porte que la bande, pour
+// ne pas toucher le reste d'une page figée.
+#title-block-header {
+    margin: 0;
+}
+
+#title-block-header:empty,
+.quarto-title-block:empty {
+    display: none;
+}
+
+.quarto-title-block:not(:empty) {
+    background-color: var(--ife-blanc);
+    margin: var(--ife-spacer-1) -1px 1em 0 !important;
+    padding: 0 var(--ife-spacer-3) !important;
+    border-left: 1px solid var(--ife-primary) !important;
+}
+
+body > footer.footer {
+    display: none;
+}

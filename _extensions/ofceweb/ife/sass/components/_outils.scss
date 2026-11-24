@@ -1,0 +1,67 @@
+// Nos outils : bandeau sombre, titre serif à gauche, cartes bordées à droite.
+// Contrat de classes pour le shortcode `outils` (ife-website).
+// Structure : `.ife-band.outils`.
+.outils {
+    .ife-band__inner {
+        display: grid;
+        grid-template-columns: minmax(0, 3fr) minmax(0, 4fr) minmax(0, 4fr) minmax(0, 4fr);
+        min-height: 30.3125rem;
+    }
+    &__heading {
+        min-width: 0;
+        margin: 0;
+        @include ife-h2-lg;
+        color: var(--ife-blanc);
+    }
+    &__grid {
+        display: contents;
+    }
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        height: 100%;
+        padding: var(--ife-spacer-5);
+        border: 1px solid var(--ife-blanc);
+        background-color: transparent;
+        text-align: center;
+        @include ife-cut-corner(sm, var(--ife-blanc));
+    }
+    &__title {
+        margin: 0;
+        @include ife-h3-lg;
+        color: var(--ife-blanc);
+        text-align: center;
+    }
+    &__description {
+        margin: var(--ife-spacer-3) 0 0;
+        flex: 1;
+        @include ife-text-base;
+        color: var(--ife-blanc);
+        text-align: left;
+    }
+    .ife-btn {
+        margin-top: var(--ife-spacer-4);
+    }
+}
+
+@include ife-below($ife-bp-nav) {
+    .outils .ife-band__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 0;
+    }
+    .outils__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--ife-gutter);
+    }
+}
+
+@include ife-below($ife-bp-sm) {
+    .outils__card {
+        padding: var(--ife-spacer-4) var(--ife-spacer-3);
+    }
+}

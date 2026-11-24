@@ -1,0 +1,101 @@
+// Semantic tokens consumed by layout/ and components/.
+:root {
+    --ife-primary: #{$ife-primary};
+    // Couleur d'accent de la marque (institution), changée par .ife-brand--*.
+    --ife-accent: #{$ife-primary};
+    --ife-blanc: #{$ife-blanc};
+    --ife-grey-light: #{$ife-grey-light};
+    --ife-ofce: #{$ife-ofce};
+    --ife-cepii: #{$ife-cepii};
+    --ife-primary-opacity-85: #{$ife-primary-opacity-85};
+    --ife-category-default: #{$ife-category-default};
+    --ife-category-blog: #{$ife-category-blog};
+    --ife-category-ecograph: #{$ife-category-ecograph};
+    --ife-category-prevision: #{$ife-category-prevision};
+    --ife-category-lettre: #{$ife-category-lettre};
+    --ife-category-policy: #{$ife-category-policy};
+    --ife-category-working: #{$ife-category-working};
+    --ife-category-revue: #{$ife-category-revue};
+    --ife-category-rapport: #{$ife-category-rapport};
+    --ife-voile: #{$ife-voile};
+    --ife-band-gradient: #{$ife-band-gradient};
+    --ife-special-gradient: #{$ife-special-gradient};
+    --ife-text-shadow-dark: #{$ife-text-shadow-dark};
+    --ife-font-title: #{$ife-font-title};
+    --ife-font-body: #{$ife-font-body};
+    --ife-font-mono: #{$ife-font-mono};
+    --ife-fs-sm: 0.875rem;
+    --ife-fs-lg: 1.25rem;
+    --ife-fs-base: 1rem;
+    --ife-fs-h1: 3.8125rem;
+    --ife-fs-h2-lg: 3rem;
+    --ife-fs-h2-sm: 1.25rem;
+    --ife-fs-h3-lg: 1.25rem;
+    --ife-fs-h3-sm: 1.125rem;
+    --ife-fs-h4: 1rem;
+    --ife-fs-h5: 0.875rem;
+    --ife-fs-h6: 0.75rem;
+    --ife-fs-date: var(--ife-fs-sm);
+    --ife-fs-label: var(--ife-fs-sm);
+    --ife-fs-localisation: var(--ife-fs-sm);
+    --ife-fs-autor: var(--ife-fs-sm);
+    --ife-fs-tag: 0.75rem;
+    --ife-fs-category: 0.75rem;
+    --ife-icon-size: 1rem;
+    --ife-spacer-0: 0;
+    --ife-spacer-1: 0.25rem;
+    --ife-spacer-2: 0.5rem;
+    --ife-spacer-3: 1rem;
+    --ife-spacer-4: 1.5rem;
+    --ife-spacer-5: 3rem;
+    // Étiquettes (badge de catégorie, source OFCE/CEPII) : même hauteur.
+    --ife-label-line-height: 1.5rem;
+    --ife-label-padding: var(--ife-spacer-0) var(--ife-spacer-2);
+    --ife-page-max: #{$ife-page-max};
+    --ife-page-pad: var(--ife-spacer-5);
+    --ife-gutter: var(--ife-spacer-4);
+    --ife-header-height: #{$ife-header-height};
+    // Coin coupé en bas à droite (mixin ife-cut-corner) : même angle, deux tailles.
+    --ife-cut-sm-x: 1.9375rem;
+    --ife-cut-sm-y: 1rem;
+    --ife-cut-lg-x: 2.875rem;
+    --ife-cut-lg-y: 1.5rem;
+}
+
+// Valeurs mobiles des jetons. Appliquées sous $ife-bp-nav, et dans les cartes
+// du bandeau publication, compactes sur tous les écrans (`_bandeaupublication.scss`).
+@mixin ife-tokens-mobile {
+    --ife-band-gradient: #{$ife-band-gradient-mobile};
+    --ife-fs-sm: 0.75rem;
+    --ife-fs-lg: 1.125rem;
+    --ife-fs-base: 0.875rem;
+    --ife-fs-h1: 3rem;
+    --ife-fs-h2-lg: 2.4375rem;
+    --ife-fs-h2-sm: 1.125rem;
+    --ife-fs-h3-lg: 1.125rem;
+    --ife-fs-h3-sm: 1rem;
+    --ife-fs-h4: 0.875rem;
+    --ife-fs-h5: 0.75rem;
+    --ife-fs-h6: 0.75rem;
+    --ife-fs-tag: 0.75rem;
+    --ife-fs-category: 0.75rem;
+    --ife-spacer-4: 1.25rem;
+    --ife-spacer-5: 2.25rem;
+    --ife-page-pad: var(--ife-spacer-3);
+    --ife-gutter: var(--ife-spacer-3);
+    --ife-header-height: auto;
+}
+
+.ife-brand--ofce {
+    --ife-accent: #{$ife-ofce};
+}
+
+.ife-brand--cepii {
+    --ife-accent: #{$ife-cepii};
+}
+
+@include ife-below($ife-bp-nav) {
+    :root {
+        @include ife-tokens-mobile;
+    }
+}

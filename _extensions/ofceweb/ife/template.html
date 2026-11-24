@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$$if(page-class)$ class="$page-class$"$endif$>
+
+<head>
+
+$metadata.html()$
+
+<style>
+$styles.html()$
+</style>
+
+<!-- htmldependencies:E3FAD763 -->
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+$if(math)$
+$if(mathjax)$
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+$endif$
+  $math$
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+$endif$
+
+$for(css)$
+<link rel="stylesheet" href="$css$" />
+$endfor$
+
+<!-- Bande commune servie par le site : remplace au chargement l'en-tête et le pied
+     écrits ci-dessous, qui restent le repli (docs/injection-bande.md). Les balises
+     sont créées par script : Quarto rendrait relatives des adresses écrites en
+     attribut, et une page servie sous /ofce/ chercherait alors /ofce/assets/. -->
+<script>
+(function () {
+  var link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "/assets/ife-band.css";
+  document.head.appendChild(link);
+  var script = document.createElement("script");
+  script.src = "/assets/ife-band.js";
+  document.head.appendChild(script);
+})();
+</script>
+</head>
+
+<body$if(ife-brand)$ class="ife-brand--$ife-brand$"$endif$>
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+<a class="ife-skip-link" href="#quarto-document-content">Aller au contenu</a>
+
+$header.html()$
+<script>
+(function () {
+  var header = document.querySelector("header.ife-header");
+  var skipLink = document.querySelector(".ife-skip-link");
+  if (header && skipLink && header.parentElement !== document.body) {
+    document.body.prepend(skipLink, header);
+  }
+})();
+$nav-toggle.js()$
+</script>
+
+$if(title)$
+$title-block.html()$
+$elseif(subtitle)$
+$title-block.html()$
+$elseif(by-author)$
+$title-block.html()$
+$elseif(date)$
+$title-block.html()$
+$elseif(categories)$
+$title-block.html()$
+$elseif(date-modified)$
+$title-block.html()$
+$elseif(doi)$
+$title-block.html()$
+$elseif(abstract)$
+$title-block.html()$
+$elseif(keywords)$
+$title-block.html()$
+$else$
+<!-- Sans title-block, Quarto y déplace le premier h1 de la page (celui d'un bandeau). -->
+<header id="title-block-header" class="quarto-title-block"></header>
+$endif$
+
+
+$if(toc)$
+$toc.html()$
+$endif$
+
+$body$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+
+$footer.html()$
+<script>
+(function () {
+  var footer = document.querySelector("footer.ife-footer");
+  if (footer) {
+    document.body.appendChild(footer);
+  }
+})();
+</script>
+
+</body>
+
+</html>

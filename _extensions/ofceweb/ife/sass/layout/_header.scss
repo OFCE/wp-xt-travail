@@ -1,0 +1,142 @@
+.ife-chrome {
+    background-color: var(--ife-blanc);
+    width: 100%;
+    a {
+        color: var(--ife-primary);
+        &:hover,
+        &:focus {
+            color: var(--ife-primary);
+        }
+    }
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: var(--ife-page-max);
+        height: var(--ife-header-height);
+        margin-inline: auto;
+        padding-inline: var(--ife-page-pad);
+        gap: var(--ife-gutter);
+    }
+}
+
+.ife-lockup {
+    display: inline-flex;
+    flex-shrink: 0;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+        opacity: 0.85;
+    }
+    &__logo {
+        display: block;
+        height: 60px;
+        object-fit: contain;
+    }
+}
+
+.ife-header {
+    width: 100%;
+    .ife-chrome__inner {
+        padding: var(--ife-spacer-3) var(--ife-page-pad);
+    }
+    &__end {
+        display: flex;
+        align-items: center;
+        align-self: flex-end;
+        margin-left: auto;
+        gap: var(--ife-spacer-4);
+    }
+    &__about {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--ife-spacer-1);
+        @include ife-text-small;
+        @include ife-underline-on-hover;
+        white-space: nowrap;
+    }
+}
+
+.ife-lang {
+    @include ife-text-small;
+    color: var(--ife-primary);
+    white-space: nowrap;
+    a {
+        color: inherit;
+        text-decoration: none;
+        &.ife-lang__current {
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+        }
+    }
+    // EN pas encore disponible : grisé. À retirer à la mise en ligne de la version anglaise.
+    // 0.65 garde ~4,8:1 sur blanc (RGAA 3.2) ; ne pas descendre sous 0.65.
+    &__other {
+        opacity: 0.65;
+    }
+}
+
+.ife-nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-left: auto;
+    padding: 0;
+    border: 1px solid var(--ife-primary);
+    background: transparent;
+    color: var(--ife-primary);
+    cursor: pointer;
+    i {
+        font-size: calc(var(--ife-icon-size) * 1.5);
+        line-height: 1;
+    }
+}
+
+// Le header est injecté dans main (grille Quarto) : on l'étale sur toute la
+// largeur via la grille, comme .column-screen, sans 100vw qui inclut la scrollbar.
+main > .ife-header {
+    grid-column: screen-start / screen-end;
+}
+
+@include ife-below($ife-bp-nav) {
+    .ife-chrome__inner,
+    .ife-header .ife-chrome__inner {
+        height: auto;
+        min-height: 4.5rem;
+        padding-block: var(--ife-spacer-3);
+        flex-wrap: wrap;
+        row-gap: 0;
+    }
+    .ife-nav-toggle {
+        display: inline-flex;
+    }
+    .ife-header__end {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        align-self: stretch;
+        gap: var(--ife-spacer-3);
+        padding: var(--ife-spacer-3) 0 var(--ife-spacer-2);
+        margin-top: var(--ife-spacer-2);
+    }
+    .ife-header.is-open .ife-header__end {
+        display: flex;
+    }
+    .ife-header__about {
+        white-space: normal;
+    }
+    .ife-brand-btns {
+        flex-wrap: wrap;
+    }
+    .ife-lockup__logo {
+        height: 40px;
+    }
+}
+

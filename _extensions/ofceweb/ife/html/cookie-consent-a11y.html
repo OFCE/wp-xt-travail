@@ -1,0 +1,152 @@
+<!-- Bandeau cookies (TermsFeed, injecté par Quarto) : corrections d'accessibilité
+     que la bibliothèque ne permet pas de configurer. Le bandeau et le centre de
+     préférences sont créés en JavaScript, d'où l'observation du DOM. -->
+<script>
+(function () {
+  function fix() {
+    // Le bandeau ne bloque pas la page : ce n'est pas une modale (RGAA 7.1).
+    var banner = document.querySelector(".termsfeed-com---nb");
+    if (banner) banner.removeAttribute("aria-modal");
+
+    // La bibliothèque insère le bandeau en tête de <body>, avant le lien
+    // d'évitement : on le place juste après (RGAA 12.7). Il est en position
+    // fixe, l'affichage ne change pas.
+    var skipLink = document.querySelector(".ife-skip-link");
+    if (banner && skipLink
+        && (banner.compareDocumentPosition(skipLink) & Node.DOCUMENT_POSITION_FOLLOWING)) {
+      skipLink.after(banner);
+    }
+
+    var pc = document.getElementById("termsfeed-com---preferences-center");
+    if (!pc) return;
+
+    // Le centre de préférences, lui, couvre la page et capture le focus :
+    // le reste de la page doit sortir de l'arbre d'accessibilité (RGAA 7.1).
+    pc.setAttribute("aria-modal", "true");
+
+    // Bouton « ✕ » sans intitulé (RGAA 7.1, 11.9).
+    var close = pc.querySelector(".cc-pc-head-close");
+    if (close) close.setAttribute("aria-label", "Fermer");
+
+    // Les cases étaient nommées « Actif » / « Inactif » : on les nomme
+    // par leur catégorie, l'état est déjà porté par la case (RGAA 11.1, 11.2).
+    pc.querySelectorAll("input[cookie_consent_toggler]").forEach(function (input) {
+      if (document.getElementById("title_" + input.id)) {
+        input.setAttribute("aria-labelledby", "title_" + input.id);
+      }
+    });
+
+    // Sélecteur de langue sans étiquette (RGAA 11.1), options en anglais
+    // (RGAA 8.7). lang sur les options et non sur le select, pour que
+    // l'étiquette reste lue en français.
+    var langSelect = pc.querySelector(".cc-pc-head-lang-select");
+    if (langSelect) {
+      langSelect.setAttribute("aria-label", "Langue du centre de préférences");
+      langSelect.querySelectorAll("option").forEach(function (option) {
+        option.setAttribute("lang", "en");
+      });
+    }
+
+    // Mention de la bibliothèque en anglais (RGAA 8.7).
+    var byline = pc.querySelector(".cc-cp-foot-byline");
+    if (byline) byline.setAttribute("lang", "en");
+
+    // Liens ouverts dans une nouvelle fenêtre (RGAA 13.2).
+    pc.querySelectorAll('a[target="_blank"]').forEach(function (a) {
+      if (a.querySelector(".visually-hidden")) return;
+      var hint = document.createElement("span");
+      hint.className = "visually-hidden";
+      hint.setAttribute("lang", "fr");
+      hint.textContent = " (nouvelle fenêtre)";
+      a.appendChild(hint);
+    });
+  }
+
+  // Les boutons du bandeau et du centre masquent l'élément qui a le focus :
+  // le focus retombe sur <body>. On le rend au bouton qui a ouvert le centre
+  // s'il est encore affiché, sinon au contenu (RGAA 7.1, 12.8).
+  var opener = null;
+
+  function restoreFocus() {
+    if (document.activeElement && document.activeElement !== document.body) return;
+    if (opener && opener.offsetParent !== null) {
+      opener.focus();
+      return;
+    }
+    var main = document.getElementById("quarto-document-content");
+    if (main) {
+      main.setAttribute("tabindex", "-1");
+      main.focus({ preventScroll: true });
+    }
+  }
+
+  document.addEventListener("click", function (event) {
+    var button = event.target.closest(".cc-nb-changep, #open_preferences_center, .ife-cookie-prefs");
+    if (button) opener = button;
+  }, true); // capture : la bibliothèque arrête la propagation du clic
+
+  // Bouton de la page cookies. Une classe et non l'id #open_preferences_center,
+  // déjà porté par le lien masqué du pied Quarto (RGAA 8.2).
+  document.addEventListener("click", function (event) {
+    if (event.target.closest(".ife-cookie-prefs")) cookieconsent.openPreferencesCenter();
+  });
+
+  document.addEventListener("focusout", function (event) {
+    if (event.relatedTarget) return;
+    var target = event.target;
+    if (!target.closest(".termsfeed-com---nb, #termsfeed-com---preferences-center")) return;
+    // Le focus est perdu parce que l'élément vient d'être masqué.
+    setTimeout(function () {
+      if (target.offsetParent === null) restoreFocus();
+    }, 0);
+  });
+
+  // Le centre de préférences est une modale : Échap la ferme, et Tab reste
+  // dedans. Le piège de la bibliothèque laisse sortir vers la barre d'adresse
+  // dans Chrome ; on le remplace en recalculant les éléments visibles à chaque
+  // appui (RGAA 7.1, 12.8).
+  var FOCUSABLE = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+  var ARROWS = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+
+  document.addEventListener("keydown", function (event) {
+    var isArrow = ARROWS.indexOf(event.key) !== -1;
+    if (event.key !== "Escape" && event.key !== "Tab" && !isArrow) return;
+    var pc = document.getElementById("termsfeed-com---preferences-center");
+    if (!pc || !pc.classList.contains("termsfeed-com---is-visible")) return;
+
+    // Les flèches changent d'onglet (géré par la bibliothèque) mais faisaient
+    // aussi défiler la page derrière : on bloque seulement le défilement.
+    if (isArrow) {
+      if (document.activeElement.getAttribute("role") === "tab") event.preventDefault();
+      return;
+    }
+
+    if (event.key === "Escape") {
+      var close = pc.querySelector(".cc-pc-head-close");
+      if (close) close.click();
+      return;
+    }
+
+    var items = Array.prototype.filter.call(pc.querySelectorAll(FOCUSABLE), function (el) {
+      return !el.disabled && el.offsetParent !== null;
+    });
+    if (!items.length) return;
+    var first = items[0];
+    var last = items[items.length - 1];
+    var inside = pc.contains(document.activeElement);
+    if (event.shiftKey && (!inside || document.activeElement === first)) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && (!inside || document.activeElement === last)) {
+      event.preventDefault();
+      first.focus();
+    }
+  }, true); // capture : passe avant le piège de la bibliothèque
+
+  document.addEventListener("DOMContentLoaded", function () {
+    fix();
+    new MutationObserver(fix).observe(document.body, { childList: true });
+  });
+})();
+</script>

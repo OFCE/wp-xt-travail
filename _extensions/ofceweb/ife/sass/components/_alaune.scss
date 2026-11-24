@@ -1,0 +1,119 @@
+// À la une : grille 3 puis 4, cartes blanches bordées.
+// Contrat de classes pour le shortcode `alaune` (ife-website).
+.column-screen-inset-shaded:has(.alaune),
+.section:has(.alaune) {
+    background-color: var(--ife-grey-light);
+}
+
+.alaune {
+    color: var(--ife-primary);
+    &__grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ife-gutter);
+    }
+    &__row {
+        display: grid;
+        gap: var(--ife-gutter);
+        align-items: stretch;
+        &--featured {
+            grid-template-columns: minmax(0, 508fr) minmax(0, 314fr) minmax(0, 314fr);
+        }
+        &--compact {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        height: 100%;
+        padding: var(--ife-spacer-3);
+        background-color: var(--ife-blanc);
+        border: 1px solid var(--ife-grey-light);
+        color: inherit;
+        // Bordure de la couleur du fond de section : inutile de redessiner le trait diagonal.
+        @include ife-cut-corner(sm);
+        .ife-keywords {
+            margin-top: auto;
+            padding-top: var(--ife-spacer-4);
+        }
+    }
+    &__foot {
+        padding-top: var(--ife-spacer-2);
+    }
+    &__head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--ife-spacer-2);
+    }
+    &__date {
+        margin: var(--ife-spacer-2) 0 0;
+        @include ife-date;
+        color: var(--ife-primary);
+    }
+    &__title {
+        margin: var(--ife-spacer-4) 0 0;
+        @include ife-h3-lg;
+        color: var(--ife-primary);
+        a {
+            @include ife-underline-on-hover;
+        }
+    }
+    &__excerpt {
+        margin: var(--ife-spacer-3) 0 0;
+        @include ife-text-base;
+        color: var(--ife-primary);
+    }
+    &__authors {
+        margin: var(--ife-spacer-3) 0 0;
+        @include ife-author;
+        color: var(--ife-primary);
+    }
+    &__chart {
+        width: 100%;
+        margin-top: var(--ife-spacer-4);
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 10rem;
+            object-fit: cover;
+            display: block;
+        }
+    }
+    &__item--lead .alaune__chart img {
+        max-height: 14rem;
+    }
+    // Image cliquable (alaune.js) : même retour visuel que le titre.
+    &__item:has(.alaune__title a) .alaune__chart {
+        cursor: pointer;
+    }
+    &__item:has(.alaune__chart:hover) .alaune__title a {
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+    }
+}
+
+@include ife-below($ife-bp-nav) {
+    .alaune__row--featured {
+        grid-template-columns: 1fr 1fr;
+        .alaune__item--lead {
+            grid-column: 1 / -1;
+        }
+    }
+    .alaune__row--compact {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@include ife-below($ife-bp-sm) {
+    .alaune__row--featured,
+    .alaune__row--compact {
+        grid-template-columns: 1fr;
+    }
+    .alaune__row--featured .alaune__item--lead {
+        grid-column: auto;
+    }
+}

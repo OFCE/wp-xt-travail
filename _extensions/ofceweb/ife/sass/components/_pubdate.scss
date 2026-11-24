@@ -1,0 +1,43 @@
+// Date de publication : icône stylo + date, puis ligne « Mise à jour le » optionnelle.
+// Contrat de classes pour `components.pub_date()` (`_modules/components.lua`).
+// Police, couleur et marge haute viennent du bloc (`<bloc>__date`).
+.ife-pubdate {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ife-spacer-2);
+    p {
+        margin: 0;
+    }
+    &__published {
+        display: flex;
+        align-items: center;
+        gap: var(--ife-spacer-2);
+    }
+    // Icône décorative découpée par un masque SVG : elle prend la couleur du texte.
+    &__icon {
+        flex: none;
+        width: var(--ife-icon-size);
+        height: var(--ife-icon-size);
+        background-color: currentColor;
+        mask: url("/www/pen_icon.svg") no-repeat center / contain;
+    }
+    &__updated {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: var(--ife-spacer-1);
+        @include ife-text-small-bold;
+    }
+    &__label {
+        @include ife-tag;
+        text-transform: uppercase;
+    }
+}
+
+// Contraste élevé : le fond de l'icône serait remplacé par la couleur du fond.
+@media (forced-colors: active) {
+    .ife-pubdate__icon {
+        forced-color-adjust: none;
+        background-color: CanvasText;
+    }
+}

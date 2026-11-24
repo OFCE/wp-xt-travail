@@ -1,0 +1,29 @@
+// Feuille de style autonome de la bande commune, servie en /assets/ife-band.css
+// par scripts/build-assets.sh. Elle habille la bande injectée par ife-band.js
+// dans une page qui n'est pas rendue avec quarto-ife (page figée), sans
+// Bootstrap. Les partiels restent la seule source : default.scss et rules.scss
+// les importent aussi pour le thème des pages.
+
+$ife-img-path: "/assets/img";
+
+@import "default";
+@import "base/tokens";
+
+// Classe de Bootstrap, absente d'une page sans Bootstrap, limitée à la bande.
+.ife-chrome .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+@import "components/skip-link";
+@import "components/brand-button";
+@import "components/social";
+@import "layout/header";
+@import "layout/footer";

@@ -1,0 +1,10 @@
+// Bandeau spécial : bannière unique, dégradé CEPII → OFCE, CTA blanc.
+// Contrat de classes pour le shortcode `bandeauspecial` (ife-website).
+// Contenu commun : `_band-publication.scss`.
+// Structure : `.ife-band.ife-band--cover.bandeauspecial`.
+.bandeauspecial {
+    @include ife-band-publication;
+    .ife-band__media::after {
+        background: var(--ife-special-gradient);
+    }
+}

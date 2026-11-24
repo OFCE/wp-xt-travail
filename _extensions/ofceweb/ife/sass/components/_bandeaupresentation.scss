@@ -1,0 +1,54 @@
+// Bandeau présentation : image en fond, texte empilé à gauche, bouton libre.
+// Contrat de classes pour le shortcode `bandeaupresentation` (ife-website).
+// Structure : `.ife-band.ife-band--cover.bandeaupresentation`.
+// Pas de hauteur fixe : le bandeau suit son contenu, avec le padding vertical de la maquette.
+.bandeaupresentation {
+    box-sizing: border-box;
+    .ife-band__inner {
+        min-height: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: var(--ife-spacer-5) var(--ife-page-pad);
+        gap: var(--ife-spacer-5);
+    }
+    .ife-band__content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ife-spacer-5);
+    }
+    .ife-band__media {
+        &::after {
+        background: var(--ife-band-gradient);
+        }
+        img {
+            object-position: center;
+        }
+    }
+    &__title {
+        margin: 0;
+        @include ife-h2-lg;
+        color: var(--ife-blanc);
+    }
+    &__text {
+        margin: var(--ife-spacer-3) 0 0;
+        @include ife-text-base;
+        color: var(--ife-blanc);
+    }
+    &__cta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--ife-spacer-3);
+    }
+    &__cta-title {
+        margin: 0;
+        @include ife-h3-lg;
+        color: var(--ife-blanc);
+    }
+    &__title,
+    &__text,
+    &__cta-title {
+        text-shadow: var(--ife-text-shadow-dark);
+    }
+}

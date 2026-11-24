@@ -1,0 +1,27 @@
+// Lien d'évitement « Aller au contenu ». Masqué hors focus, visible en haut à gauche au focus.
+.ife-skip-link {
+    position: absolute;
+    top: var(--ife-spacer-2);
+    left: var(--ife-spacer-2);
+    z-index: 1100;
+    padding: var(--ife-spacer-2) var(--ife-spacer-3);
+    background-color: var(--ife-primary);
+    @include ife-text-base-bold;
+    text-decoration: none;
+    &:link,
+    &:visited,
+    &:hover,
+    &:focus {
+        color: var(--ife-blanc);
+        text-decoration: none;
+    }
+    &:not(:focus) {
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+}

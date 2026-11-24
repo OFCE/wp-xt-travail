@@ -1,0 +1,117 @@
+// Boutons d'action. Quatre variantes : solid-light, solid-dark, outline-light, outline-dark.
+// Mêmes noms que les variantes Figma (jeux `solid` et `outline`).
+// Contrat de classes pour `components.cta_button()` (`_modules/components.lua`).
+.ife-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ife-spacer-2);
+    box-sizing: border-box;
+    padding: var(--ife-spacer-2) var(--ife-spacer-3);
+    border: 4px solid transparent;
+    background-color: transparent;
+    @include ife-text-base-bold;
+    text-decoration: none;
+    white-space: nowrap;
+    i {
+        font-size: var(--ife-icon-size);
+        line-height: 1;
+    }
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+    // Blanc qui s'inverse en anthracite au survol. Sur fond sombre.
+    &--solid-light {
+        background-color: var(--ife-blanc);
+        border-color: var(--ife-blanc);
+        color: var(--ife-primary);
+        &:link,
+        &:visited {
+            color: var(--ife-primary);
+        }
+        &:hover {
+            @include ife-btn-solid-light-hover;
+        }
+        // Anneau blanc détaché, comme --outline-light.
+        &:focus-visible {
+            outline: 2px solid var(--ife-blanc);
+            outline-offset: 4px;
+            box-shadow: none;
+        }
+    }
+    // Anthracite qui s'évide au survol. Sur fond clair.
+    &--solid-dark {
+        background-color: var(--ife-primary);
+        border-color: var(--ife-primary);
+        color: var(--ife-blanc);
+        &:link,
+        &:visited {
+            color: var(--ife-blanc);
+        }
+        &:hover {
+            background-color: transparent;
+            color: var(--ife-primary);
+        }
+        &:focus-visible {
+            outline: 2px solid var(--ife-primary);
+            outline-offset: 4px;
+            box-shadow: none;
+        }
+    }
+    // Fond anthracite translucide : lisible sur image comme sur fond uni.
+    &--outline-light {
+        background-color: var(--ife-primary-opacity-85);
+        border-color: var(--ife-blanc);
+        color: var(--ife-blanc);
+        &:link,
+        &:visited {
+            color: var(--ife-blanc);
+        }
+        &:hover {
+            background-color: var(--ife-blanc);
+            color: var(--ife-primary);
+            img {
+                filter: brightness(0);
+            }
+        }
+        // Focus clavier distinct du survol : anneau blanc détaché du bouton (RGAA 10.7).
+        &:focus-visible {
+            outline: 2px solid var(--ife-blanc);
+            outline-offset: 4px;
+            box-shadow: none;
+        }
+    }
+    &--outline-dark {
+        background-color: transparent;
+        border-color: var(--ife-primary);
+        color: var(--ife-primary);
+        &:link,
+        &:visited {
+            color: var(--ife-primary);
+        }
+        &:hover {
+            background-color: var(--ife-primary);
+            border-color: var(--ife-primary);
+            color: var(--ife-blanc);
+        }
+        // Même principe sur fond clair : anneau anthracite détaché.
+        &:focus-visible {
+            outline: 2px solid var(--ife-primary);
+            outline-offset: 4px;
+            box-shadow: none;
+        }
+    }
+}
+
+@include ife-below($ife-bp-sm) {
+    .ife-btn {
+        max-width: 100%;
+        white-space: normal;
+    }
+}
+
+.btn-primary {
+    --bs-btn-color: var(--ife-blanc) !important;
+    --bs-btn-bg: var(--ife-primary);
+    --bs-btn-border-color: var(--ife-primary);
+}

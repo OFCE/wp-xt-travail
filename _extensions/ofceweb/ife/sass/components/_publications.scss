@@ -1,0 +1,215 @@
+// Dernières publications : liste de lignes à trois colonnes, filets fins.
+// Panneau sombre : trois colonnes égales, intro puis cartes de marque.
+// Contrat de classes pour le shortcode `publications` (ife-website).
+.publications {
+    color: var(--ife-primary);
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+    &__item {
+        display: grid;
+        grid-template-columns: minmax(10rem, 14rem) 1.5rem minmax(0, 1fr) 4.5rem minmax(10rem, 16rem);
+        align-items: start;
+        box-sizing: border-box;
+        padding: var(--ife-spacer-3) 0;
+        border-bottom: 1px solid var(--ife-grey-light);
+        color: inherit;
+    }
+    &__meta {
+        grid-column: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--ife-spacer-2);
+        min-width: 0;
+    }
+    &__head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--ife-spacer-2);
+    }
+    &__date {
+        margin: 0;
+        @include ife-date;
+        color: var(--ife-primary);
+    }
+    &__body {
+        grid-column: 3;
+        min-width: 0;
+    }
+    &__title {
+        margin: 0;
+        @include ife-h3-lg;
+        color: var(--ife-primary);
+        a {
+            @include ife-underline-on-hover;
+        }
+    }
+    &__authors {
+        margin: var(--ife-spacer-3) 0 0;
+        @include ife-author;
+        color: var(--ife-primary);
+    }
+    &__aside {
+        grid-column: 5;
+        display: flex;
+        flex-direction: column;
+        gap: var(--ife-spacer-3);
+        min-width: 0;
+        .ife-source {
+            align-self: flex-start;
+        }
+    }
+    &__panel {
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: var(--ife-spacer-5);
+        .ife-band__inner {
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 4fr) minmax(0, 4fr);
+            width: 100%;
+            max-width: none;
+            min-height: 0;
+            margin-inline: 0;
+            padding: var(--ife-page-pad);
+            gap: var(--ife-gutter);
+            align-items: stretch;
+        }
+    }
+    &__panel-intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+    }
+    &__panel-heading {
+        margin: 0;
+        @include ife-h3-lg;
+        color: var(--ife-blanc);
+    }
+    &__panel-text {
+        margin: var(--ife-spacer-3) 0 0;
+        @include ife-text-base;
+        color: var(--ife-blanc);
+    }
+    &__sites {
+        display: contents;
+    }
+    &__site {
+        --ife-site-color: var(--ife-primary);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 340px;
+        padding: var(--ife-page-pad);
+        background-color: var(--ife-site-color);
+        color: var(--ife-blanc);
+        text-align: center;
+        @include ife-cut-corner(sm);
+        .ife-btn {
+            position: relative;
+            z-index: 1;
+            align-self: center;
+        }
+        &--ofce {
+            --ife-site-color: var(--ife-ofce);
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg, var(--ife-ofce) 50%, color-mix(in srgb, var(--ife-ofce) 50%, transparent) 99.88%);
+                pointer-events: none;
+            }
+        }
+        &--cepii {
+            --ife-site-color: var(--ife-cepii);
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg, var(--ife-cepii) 50%, color-mix(in srgb, var(--ife-cepii) 50%, transparent) 99.88%);
+                pointer-events: none;
+            }
+        }
+    }
+    &__site-media {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center bottom;
+        }
+    }
+    &__site-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        min-width: 0;
+        padding-bottom: var(--ife-spacer-3);
+        gap: var(--ife-spacer-3);
+        text-shadow: 0 0 20px var(--ife-site-color), 0 0 20px var(--ife-site-color), 0 0 20px var(--ife-site-color), 0 0 5px var(--ife-site-color);
+    }
+    &__site-title {
+        margin: 0;
+        @include ife-h3-lg;
+        color: var(--ife-blanc);
+        text-align: center;
+    }
+    &__site-description {
+        margin: 0;
+        @include ife-text-base;
+        color: var(--ife-blanc);
+        text-align: left;
+    }
+}
+
+@include ife-below($ife-bp-nav) {
+    .publications__item {
+        grid-template-columns: 1fr;
+        gap: var(--ife-spacer-3);
+    }
+    .publications__meta,
+    .publications__body,
+    .publications__aside {
+        grid-column: auto;
+    }
+    .publications__panel {
+        .ife-band__inner {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+    .publications__panel-intro {
+        flex: none;
+    }
+    .publications__sites {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--ife-gutter);
+    }
+}
+
+@include ife-below($ife-bp-sm) {
+    .publications__sites {
+        grid-template-columns: 1fr;
+    }
+    .publications__site {
+        min-height: 12rem;
+        padding: var(--ife-spacer-4) var(--ife-spacer-3);
+    }
+}

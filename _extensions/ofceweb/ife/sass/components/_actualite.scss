@@ -1,0 +1,89 @@
+// Notre actualité : trois cartes avec image 16:9, puis lignes et bouton.
+// Contrat de classes pour le shortcode `actualite` (ife-website).
+.actualite {
+    color: var(--ife-primary);
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--ife-gutter);
+    }
+    &__card,
+    &__line {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        min-width: 0;
+        border-bottom: 1px solid var(--ife-grey-light);
+        color: inherit;
+        .ife-meta {
+            margin-top: var(--ife-spacer-3);
+        }
+    }
+    &__card {
+        height: 100%;
+        padding-bottom: var(--ife-spacer-3);
+        .ife-meta {
+            margin-bottom: var(--ife-spacer-3);
+        }
+    }
+    &__row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: var(--ife-spacer-5);
+        align-items: end;
+        margin-top: var(--ife-spacer-5);
+    }
+    &__lines {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+    }
+    &__line {
+        padding: var(--ife-spacer-3) 0;
+    }
+    &__title {
+        margin: 0;
+        @include ife-h3-lg;
+        color: var(--ife-primary);
+        a {
+            @include ife-underline-on-hover;
+        }
+    }
+    &__image {
+        width: 100%;
+        margin-top: auto;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background-color: var(--ife-grey-light);
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+    &__more {
+        display: flex;
+        justify-content: flex-end;
+        align-self: end;
+    }
+}
+
+@include ife-below($ife-bp-nav) {
+    .actualite__cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@include ife-below($ife-bp-sm) {
+    .actualite__row {
+        grid-template-columns: 1fr;
+    }
+    .actualite__more {
+        justify-content: stretch;
+        .ife-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}

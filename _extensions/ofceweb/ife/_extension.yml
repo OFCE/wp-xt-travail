@@ -1,0 +1,78 @@
+title: Format IFE
+author: IFE
+version: 0.3.0
+quarto-required: ">=1.9.38"
+contributes:
+  formats:
+    common:
+      toc: true
+      lang: fr
+      french: true
+      authors-title: "Autrices, auteurs & résumé"
+      language:
+        fr:
+          section-title-references: "Bibliographie"
+          title-block-author-single: "Par"
+          title-block-author-plural: "Par"
+          title-block-published: "Publié le"
+          title-block-modified: "Modifié le"
+          toc-title: "Sur cette page"
+        en:
+          section-title-references: "Bibliography"
+          title-block-author-single: "Author"
+          title-block-author-plural: "Authors"
+          title-block-published: "Published on"
+          title-block-modified: "Modified on"
+          callout-tip-title: "Box"
+          toc-title: "On this page"
+      fig-asp: 0.61
+      cap-location: top
+      crossref:
+        chapters: false
+        fig-prefix: graphique
+        tbl-prefix: tableau
+        eq-prefix: équation
+        sec-prefix: section
+        tip-prefix: encadré
+        fig-title: "**Graphique**"
+        tip-title: "**Encadré**"
+        title-delim: "**.**"
+        tbl-title: "**Tableau**"
+        lof-title: Graphiques
+        lot-title: Tableaux
+        fr:
+          title-delim: "**.**"
+        en:
+          title-delim: "**.**"
+
+    html:
+      theme:
+        - bootstrap
+        - sass/default.scss
+        - sass/rules.scss
+      lightbox: true
+      link-external-icon: true
+      toc-location: left
+      toc-title: Sur cette page
+      number-depth: 3
+      html-math-method: katex
+      fig-dpi: 1200
+      fig-format: svg
+      reference-location: margin
+      fig-width: 6
+      callout-icon: false
+      title-block-style: default
+      image-lazy-loading: true
+      number-sections: false
+      hide-description: true
+      template: template.html
+      filters:
+        - brand.lua
+      template-partials:
+        - html/title-block.html
+        - html/header.html
+        - html/footer.html
+        - html/nav-toggle.js
+      include-in-header:
+        - html/analytics.html
+        - html/cookie-consent-a11y.html

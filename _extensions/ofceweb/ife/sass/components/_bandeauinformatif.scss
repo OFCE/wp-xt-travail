@@ -1,0 +1,50 @@
+// Bandeau informatif : annonce d'une ligne, image de fond, CTA blanc.
+// Contrat de classes pour le shortcode `bandeauinformatif` (ife-website).
+// Structure : `.ife-band.ife-band--cover.bandeauinformatif`.
+.bandeauinformatif {
+    box-sizing: border-box;
+    .ife-band__inner {
+        min-height: 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: var(--ife-spacer-4) var(--ife-page-pad);
+        gap: var(--ife-spacer-5);
+    }
+    .ife-band__media {
+        &::after {
+            background: var(--ife-special-gradient);
+        }
+    }
+    &__text {
+        margin: 0;
+        @include ife-h2-sm;
+        color: var(--ife-blanc);
+        text-shadow: var(--ife-text-shadow-dark);
+    }
+    // Logo blanc découpé par un masque SVG. Son nom est lu dans le texte masqué qu'il contient.
+    &__logo {
+        display: inline-block;
+        height: 1.875rem;
+        margin: 0 var(--ife-spacer-1) 0 var(--ife-spacer-2);
+        vertical-align: middle;
+        background-color: var(--ife-blanc);
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        &--ofce {
+            aspect-ratio: 73.856 / 30;
+            mask-image: url("/www/ofce_logo_masque.svg");
+        }
+        &--cepii {
+            aspect-ratio: 105.08 / 30;
+            mask-image: url("/www/cepii_logo_masque.svg");
+        }
+    }
+}
+
+// Contraste élevé : le fond blanc du logo serait remplacé par la couleur du fond.
+@media (forced-colors: active) {
+    .bandeauinformatif__logo {
+        forced-color-adjust: none;
+        background-color: CanvasText;
+    }
+}

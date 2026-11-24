@@ -1,0 +1,71 @@
+// Contenu d'un bandeau de publication : thème, date, titre, extrait, auteurs, boutons.
+// Contrat de classes pour `components.publication_band()` (`_modules/components.lua`).
+// Inclus par `.bandeaupublication`, `.bandeauspecial` et `.ecograph`,
+// qui ne fixent que leur dégradé et leurs particularités.
+// Structure : `.ife-band.ife-band--cover.<bloc>`.
+// Pas de hauteur fixe : le bandeau suit son contenu, avec le padding vertical de la maquette.
+@mixin ife-band-publication {
+    box-sizing: border-box;
+    .ife-band__inner {
+        min-height: 0;
+        padding: var(--ife-spacer-5) var(--ife-page-pad);
+    }
+    .ife-band__media img {
+        object-position: center;
+    }
+    &__title {
+        margin: 0;
+        @include ife-h2-lg;
+        color: var(--ife-blanc);
+    }
+    &__date {
+        margin: var(--ife-spacer-4) 0 0;
+        @include ife-date;
+        color: var(--ife-blanc);
+    }
+    &__subtitle {
+        margin: var(--ife-spacer-3) 0 0;
+        @include ife-h3-lg;
+        color: var(--ife-blanc);
+    }
+    &__excerpt {
+        margin: var(--ife-spacer-3) 0 0;
+        @include ife-text-base;
+        color: var(--ife-blanc);
+    }
+    &__author {
+        margin: var(--ife-spacer-3) 0 0;
+        @include ife-author;
+        color: var(--ife-blanc);
+    }
+    &__title,
+    &__date,
+    &__subtitle,
+    &__excerpt,
+    &__author {
+        text-shadow: var(--ife-text-shadow-dark);
+    }
+    // Boutons empilés : « Lire cet article » puis « Nos publications ».
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--ife-spacer-4);
+        margin-top: var(--ife-spacer-4);
+    }
+    // Titre de la publication et bouton « Lire cet article » liés (band-publication.js) :
+    // le survol de l'un affiche aussi l'état de survol de l'autre, comme dans `alaune`.
+    // Le focus clavier du bouton souligne aussi le titre. Les auteurs ne sont pas concernés.
+    .ife-band__content:has(.ife-band__cta) .ife-band__subtitle {
+        cursor: pointer;
+    }
+    .ife-band__content:has(.ife-band__cta) .ife-band__subtitle:hover,
+    .ife-band__content:has(.ife-band__cta:hover) .ife-band__subtitle,
+    .ife-band__content:has(.ife-band__cta:focus-visible) .ife-band__subtitle {
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+    }
+    .ife-band__content:has(.ife-band__subtitle:hover) .ife-band__cta {
+        @include ife-btn-solid-light-hover;
+    }
+}
